@@ -1,0 +1,100 @@
+.vc_ui-panel-window {
+  
+  &,
+  * {
+    box-sizing: border-box;
+  }
+  .ui-resizable-handle {
+    opacity: 0.3;
+
+    &.ui-resizable-n {
+      top: -9px;
+      border-radius: 10px 10px 0 0;
+    }
+    &.ui-resizable-e {
+      right: -9px;
+      border-radius: 0 10px 10px 0;
+    }
+    &.ui-resizable-s {
+      bottom: -9px;
+      border-radius: 0 0 10px 10px;
+    }
+    &.ui-resizable-w {
+      left: -9px;
+      border-radius: 10px 0 0 10px;
+    }
+    &.ui-resizable-ne {
+      right: -5px;
+      top: -5px;
+      border-radius: 10px 10px 10px 0;
+    }
+    &.ui-resizable-se {
+      width: 15.3px;
+      height: 15.3px;
+      position: absolute;
+      right: -5px;
+      bottom: -5px;
+      border-radius: 0 10px 10px 10px;
+    }
+    &.ui-resizable-sw {
+      left: -5px;
+      bottom: -5px;
+      border-radius: 10px 0 10px 10px;
+    }
+    &.ui-resizable-nw {
+      left: -5px;
+      top: -5px;
+      border-radius: 10px 10px 0 10px;
+    }
+    &:hover {
+      background-color: var(--lqd-color-primary);
+    }
+  }
+}
+
+.vc_ui-panel-window-inner {
+  display: flex;
+  max-width: 100%;
+  flex: 1 0 100%;
+  flex-direction: column;
+  position: relative;
+  z-index: 2;
+  border-radius: var(--lqd-radius-popup);
+  background: var(--lqd-bg-popup);
+  box-shadow: var(--lqd-shadow-popup);
+
+  > .vc_ui-panel-header-container,
+  > .vc_ui-panel-footer-container {
+    flex: 0 0 auto;
+  }
+  > .vc_ui-panel-content-container {
+    flex: 1 1 auto;
+    position: relative;
+  }
+}
+
+@media (max-width: @screen-xs-max) {
+  .vc_ui-panel-window {
+    box-sizing: border-box !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    max-height: none !important;
+    position: fixed !important;
+    left: 0 !important;
+    top: 0 !important;
+    padding: 5vh 5vw !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    
+    &.vc_active {
+      display: block !important;
+    }
+    
+    // always unminimized on mobile
+    .vc_ui-panel-header-content,
+    .vc_ui-panel-content-container,
+    .vc_ui-panel-footer-container {
+      display: block !important;
+    }
+  }
+}

@@ -1,0 +1,148 @@
+/** Color picker field **/
+.wpb_el_type_colorpicker,
+.vc_edit_form_elements .wpb_el_type_colorpicker {
+  
+  .colorpicker_field {
+    display: inline-block;
+    width: 90px;
+    padding: 4px 3px 3px;
+    margin-right: 4px;
+  }
+  .wp-picker-clear {
+    width: auto;
+  }
+}
+
+.edit_form_line {
+
+  .updated {
+    margin: 5px 0px 2px;
+  }
+}
+
+// Fix for bootstrap modal and autocomplete z-index
+.vc_ui-front {
+  z-index: 100052 !important;
+}
+
+.wp-picker-container.vc_color-picker {
+  display: flex;
+  align-items: center;
+  width: 100%;
+
+  &,
+  * {
+    box-sizing: content-box;
+  }
+  .wp-picker-clear {
+    padding: 2px 4px;
+  }
+  .wp-color-result-text {
+    display: none;
+  }
+  .wp-picker-input-wrap {
+
+    label {
+      margin: 0;
+    }
+    input {
+      margin-right: 3px;
+      height: 26px;
+      min-height: 0;
+      
+      &[type=text] {
+        padding: 0;
+      }
+    }
+  }
+  .wp-picker-holder {
+    z-index: 10000;
+    position: absolute;
+    top: 100%;
+    
+    .iris-picker {
+      border-color: var(--lqd-bg-responsive-params);
+      background-color: var(--lqd-bg-responsive-params);
+    }
+    .vc_alpha-container {
+      border-radius: 0;
+      border: 1px solid var(--lqd-bg-responsive-params);
+      padding: 6px;
+      background: var(--lqd-bg-responsive-params);
+      position: absolute;
+      width: 243px;
+      left: -1px;
+      z-index: 1000;
+      bottom: -64px;
+
+      label {
+        display: block;
+        
+        output {
+          padding-top: 0px;
+          display: inline;
+          vertical-align: top;
+        }
+      }
+      input {
+        padding: 0;
+        margin: 0;
+        width: 100%;
+      }
+    }
+  }
+  .wp-picker-open {
+
+    + .wp-picker-input-wrap {
+      display: flex;
+      align-items: center;
+    }
+  }
+}
+
+
+.vc_wrapper-param-type-liquid_colorpicker {
+  
+  .ld-colorpicker {
+    margin: 0;
+    font-size: inherit;
+  }
+  .ld-colorpicker-txt {
+    display: none;
+  }
+  .ld-colorpicker-preview {
+    width: 100%;
+    min-height: inherit;
+    border-radius: inherit;
+    position: relative;
+    top: auto;
+    left: auto;
+  }
+}
+
+.vc_wrapper-param-type-liquid_colorpicker .ld-colorpicker-wrap,
+.wp-picker-container.vc_color-picker .button.wp-color-result {
+    width: 55px;
+    flex: 0 0 55px;
+    min-height: 26px;
+    padding: 0;
+    margin: 0;
+    border: none;
+    position: relative;
+    box-shadow: 0 0 0 1px var(--lqd-outline-popup-opts);
+    border-radius: 15px;
+    background: none;
+    overflow: hidden;
+
+    &:before {
+      content: '';
+      display: inline-block;
+      width: 100%;
+      min-height: inherit;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAIAAADZF8uwAAAAGUlEQVQYV2M4gwH+YwCGIasIUwhT25BVBADtzYNYrHvv4gAAAABJRU5ErkJggg==);
+    }
+  }

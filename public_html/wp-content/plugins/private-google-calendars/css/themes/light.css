@@ -1,0 +1,42 @@
+.pgc-calendar-wrapper.pgc-theme-light .fc .fc-toolbar-title {
+    font-size: 1.4rem;
+}
+
+.pgc-calendar-wrapper.pgc-theme-light .fc .fc-button,
+.pgc-calendar-wrapper.pgc-theme-light .fc .fc-button .fc-icon,
+.pgc-calendar-wrapper.pgc-theme-light .fc-popover-header {
+    font-size: 1rem;
+}
+
+.pgc-calendar-wrapper.pgc-theme-light {
+    padding: 1rem;
+    background-color: white;
+    border-radius: .2rem;
+}
+
+.pgc-calendar-wrapper.pgc-theme-light table.fc-list-table,
+.pgc-calendar-wrapper.pgc-theme-light .fc-dayGridMonth-view .fc-daygrid-event,
+.pgc-calendar-wrapper.pgc-theme-light .fc-timeGridWeek-view .fc-daygrid-event,
+.pgc-calendar-wrapper.pgc-theme-light .fc-timegrid-event,
+.pgc-calendar-wrapper.pgc-theme-light .fc-daygrid-day-number,
+.pgc-calendar-wrapper.pgc-theme-light .fc-col-header-cell,
+.pgc-calendar-wrapper.pgc-theme-light .fc-daygrid-more-link,
+.pgc-calendar-wrapper.pgc-theme-light .fc-timegrid-slot-label-cushion.fc-scrollgrid-shrink-cushion,
+.pgc-calendar-wrapper.pgc-theme-light .fc-timegrid-axis-cushion.fc-scrollgrid-shrink-cushion.fc-scrollgrid-sync-inner,
+.pgc-calendar-wrapper.pgc-theme-light .fc-daygrid-event-harness  {
+    font-size: .8rem;
+}
+
+/* Colors, maybe better to leave this alone (users can override it in WP admin if they want) */
+.pgc-calendar-wrapper.pgc-theme-light .fc a,
+.pgc-calendar-wrapper.pgc-theme-light .fc-toolbar-title,
+.pgc-calendar-wrapper.pgc-theme-light .pgc-calendar-filter-wrapper label,
+.pgc-calendar-wrapper.pgc-theme-light .fc-list-event,
+.pgc-calendar-wrapper.pgc-theme-light .fc-popover-header {
+    color: #606060;
+}
+
+.pgc-calendar-wrapper.pgc-theme-light .fc .fc-daygrid-day.fc-day-today,
+.pgc-calendar-wrapper.pgc-theme-light .fc .fc-timegrid-col.fc-day-today {
+    background-color: #F0F0F0;
+}

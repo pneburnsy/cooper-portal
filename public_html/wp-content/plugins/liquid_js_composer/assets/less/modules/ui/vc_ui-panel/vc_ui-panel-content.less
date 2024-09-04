@@ -1,0 +1,24 @@
+.vc_ui-panel-content-container {
+  overflow-x: hidden;
+  overflow-y: auto;
+  min-height: 150px;
+  display: flex;
+  color: var(--lqd-txt-popup-label-opt);
+  overscroll-behavior: contain;
+}
+
+.vc_ui-panel-content {
+  width: 100%;
+  padding: 18px;
+
+  &.vc_properties-list-init {
+    margin: auto;
+  }
+}
+
+.vc_ui-content-hidden {
+  
+  .vc_ui-panel-content {
+    display: none;
+  }
+}

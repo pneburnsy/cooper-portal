@@ -1,0 +1,78 @@
+.wpb_el_type_liquid_shape_divider {
+
+	.liquid-inner-wrap {
+
+		> div:not(:last-child) {
+			margin-bottom: 30px;
+		}
+		label {
+			display: block;
+			margin-bottom: 1em;
+		}
+	}
+}
+.liquid-shape-divider-tabs {
+	display: flex;
+	align-items: center;
+	margin-bottom: 20px;
+}
+.liquid_shape_divider_preview {
+	height: 190px;
+	
+	.liquid_shape {
+		width: 100%;
+		height: 100%;
+		position: relative;
+		background-color: #fff;
+	}
+	img {
+		visibility: hidden;
+		max-width: 100%;
+	}
+	svg {
+		width: 100%;
+		max-height: 100%;
+		height: auto;
+		top: 0;
+		left: 0;
+		position: absolute;
+	}
+
+	.liquid_shape_divider_settings[data-position=top] & {
+
+		svg {
+			transform: rotate(180deg);
+		}
+	}
+	.liquid_shape_divider_settings[data-position=bottom] & {
+
+		svg {
+			top: auto;
+			bottom: 0;
+		}
+	}
+}
+
+.liquid-shape-divider-heading {
+	display: inline-flex;
+	flex: 1;
+	padding: 15px 0;
+	margin: 0.5em 0;
+	border: 1px solid var(--lqd-outline-popup-opts);
+	border-radius: var(--lqd-radius-popup);
+	white-space: nowrap;
+	justify-content: center;
+	font-size: 1em;
+	color: var(--lqd-txt-btn);
+	cursor: pointer;
+	transition: background 0.3s, border 0.3s, color 0.3s;
+
+	+ .liquid-shape-divider-heading {
+		margin-left: 18px;
+	}
+	&.active {
+		background-color: var(--lqd-active-bg-btnset);
+		border-color: var(--lqd-active-bg-btnset);
+		color: var(--lqd-active-txt-btnset)
+	}
+}

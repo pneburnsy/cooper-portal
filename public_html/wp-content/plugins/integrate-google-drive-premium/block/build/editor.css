@@ -1,0 +1,26 @@
+.editor-block-list-item-igd-browser:after,
+.editor-block-list-item-igd-uploader:after,
+.editor-block-list-item-igd-gallery:after,
+.editor-block-list-item-igd-media:after,
+.editor-block-list-item-igd-search:after {
+	content: '\f160';
+	font-family: 'dashicons', serif;
+	font-size: 20px;
+	color: #eaeaea;
+	position: absolute;
+	top: 5px;
+	right: 5px;
+}
+
+/* <fs_premium_only> */
+.editor-block-list-item-igd-browser:after,
+.editor-block-list-item-igd-uploader:after,
+.editor-block-list-item-igd-gallery:after,
+.editor-block-list-item-igd-media:after,
+.editor-block-list-item-igd-search:after {
+	content: '' !important;
+	display: none;
+}
+
+/* </fs_premium_only> */
+

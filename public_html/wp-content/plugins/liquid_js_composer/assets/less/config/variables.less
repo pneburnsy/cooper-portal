@@ -1,0 +1,284 @@
+@import (reference) "../../lib/bower/bootstrap3/less/bootstrap.less";
+@import (reference) "../../fonts/vc_icons_v2/variables.less";
+
+@systemFonts: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif !important;
+
+//Grid
+// This variables are needed when grid is recalculated
+@gridColumns: 12;
+@fluidGridGutterWidth: 2.5%;
+
+// VC Variables
+@vc_grey: #f7f7f7;
+@vc_backend_controls_inactive_color: #e6e6e6;
+@vc_grey_hover: #F0F0F0;
+@vc_inner_container_bg_color: #FFFFFF;
+@vc_smaller_font: 80%;
+@vc_responsive_max_w: 480px;
+
+@vc_element_margin_bottom: 35px;
+@vc_margin_bottom_third: @vc_element_margin_bottom/3;
+@vc_margin_bottom_gold: @vc_element_margin_bottom/1.61;
+
+// vc_row
+@vc_row_control_bg: @vc_backend_controls_inactive_color;
+
+// vc_column
+@vc_column_bg: #F5F5F5;
+//vc_call_to_action.less
+@vc_call_to_action_bg: @vc_grey;
+@vc_call_to_action_border: @vc_grey_hover;
+@vc_cta_button_w: 100% - 70% - @fluidGridGutterWidth;
+
+@vc_call_to_action_2_bg: @grey;
+
+//vc_google_maps.less
+@vc_google_maps_bg: @vc_grey;
+
+//vc_post_slider.less
+@vc_post_slider_caption_bg: @vc_grey;
+
+//vc_progress_bar.less
+@vc_progress_bar_bg: @vc_grey;
+
+//vc_separator.less
+@vc_separator_border: @grey;
+
+//vc_tabs_tour_accordion.less
+@tour_nav_spanX: 4;
+@tour_nav_width: 6.041666666666667% * @tour_nav_spanX + @fluidGridGutterWidth * (@tour_nav_spanX - 1);
+@tour_slides_width: 100% - @tour_nav_width;
+
+@vc_tab_bg_active: @vc_grey;
+@vc_tab_bg: @vc_inner_container_bg_color;
+@vc_tab_tag_bg: @vc_backend_controls_inactive_color;
+@vc_tab_tag_active_bg: #FFFFFF;
+@vc_tab_tag_color: #848c91;
+@vc_accordion_header_padding: 16px;
+@vc_accordion_header_tag_bg: #FFFFFF;
+@vc_accordion_tab_bg: #FFFFFF;
+@vc_accordion_tab_label_margin_left: 23px;
+@vc_accordion_tab_label_color: #6f777d;
+//vc_teaser_grid.less
+
+@vc_carousel_arrows_bg: @vc_grey;
+@vc_carousel_arrows_bg_hover: @vc_grey_hover;
+
+// Teaser box
+@vc_teaser_checkbox_radius: 2px;
+
+@import "admin_variables.less";
+@import "variables_common.less";
+@import "variables_colors.less";
+@import (reference) "../lib/vc_mixins.less";
+
+// Breakpoints
+@vc_grid-float-breakpoint: @grid-float-breakpoint;
+
+@vc_background: #036DEA;
+
+
+/*
+	Liquid Theme Variables
+*/
+:root {
+
+	--lqd-color-primary: #097DEA;
+	--lqd-color-primary-rgb: rgb(9, 125, 234);
+
+	--lqd-txt-btn: #000;
+	--lqd-txt-nav: #404040;
+	--lqd-txt-btn-nav: #404040;
+	--lqd-txt-grid: rgba(#000, 0.85);
+	--lqd-txt-popup-title: #000;
+	--lqd-txt-popup-label-group: rgba(#000, 0.75);
+	--lqd-txt-popup-label-opt: rgba(#000, 0.65);
+	--lqd-txt-popup-label-tab: #676767;
+	--lqd-txt-toggle: rgba(#000, 0.65);
+	--lqd-txt-btnset: #333;
+	--lqd-txt-active: #fff;
+	--lqd-txt-control: #fff;
+	--lqd-txt-inputs: #000;
+	--lqd-txt-panel-title: #000;
+	--lqd-txt-panel-controls: #2f313b;
+	--lqd-txt-css-editor-inputs: rgba(#000, 0.6);
+	--lqd-txt-responsive-params: rgba(#000, 0.65);
+	--lqd-txt-templates-filter: #8e8e8e;
+	--lqd-txt-templates-tabs: rgba(#000, 0.6);
+	--lqd-txt-template-item-title: #000;
+	--lqd-txt-template-item-cat: rgba(#000, 0.45);
+
+	--lqd-bg-popup: #f4f4f4;
+	--lqd-bg-popup-header: #f4f4f4;
+	--lqd-bg-grid: rgba(#000, 0.02);
+	--lqd-bg-nav: #fff;
+	--lqd-bg-btn: #fff;
+	--lqd-bg-nav-hover: rgba(#000, 0.1);
+	--lqd-bg-popup-dropdown: #fff;
+	--lqd-bg-toggle: #ebebeb;
+	--lqd-bg-toggle-handle: #fff;
+	--lqd-bg-slider-handle: #27292c;
+	--lqd-bg-active: #000;
+	--lqd-bg-control: #27292c;
+	--lqd-bg-css-editor-margin: #f0f0f0;
+	--lqd-bg-css-editor-border: #f7f7f7;
+	--lqd-bg-css-editor-padding: #fff;
+	--lqd-bg-css-editor-inputs: #fff;
+	--lqd-bg-responsive-params: #eee;
+	--lqd-bg-backdrop-panels: rgba(#000, 0.75);
+	--lqd-bg-backdrop: rgba(#fff, 0.75);
+	--lqd-bg-backdrop-opposite: rgba(#000, 0.5);
+	--lqd-bg-toggle-nolabel: #e2e2e2;
+	--lqd-bg-templates-header: #fff;
+	--lqd-bg-templates-body: #f4f5f9;
+	--lqd-bg-templates-sidebar: #27292c;
+	--lqd-bg-template-item: #fff;
+	--lqd-bg-desc: rgba(#000, 0.4);
+	--lqd-bg-btn-save: #313131;
+	--lqd-bg-preloader: rgba(#fff, 0.85);
+
+	--lqd-outline-nav: #ededed;
+	--lqd-outline-popup-opts: rgba(#000, 0.21);
+	--lqd-outline-popup-divider: #d3d3d3;
+	--lqd-outline-btnset: rgba(#000, 0.11);
+	--lqd-outline-css-editor-margin: #f0f0f0;
+	--lqd-outline-css-editor-border: #f7f7f7;
+	--lqd-outline-css-editor-padding: #fff;
+	--lqd-outline-css-editor-inputs: #d8d8d8;
+
+	--lqd-active-txt-btn: #fff;
+	--lqd-active-txt-grid: #fff;
+	--lqd-active-txt-popup-label-tab: #000;
+	--lqd-active-txt-toggle: #fff;
+	--lqd-active-txt-btnset: #fff;
+	--lqd-active-txt-templates-filter: #fff;
+	--lqd-active-txt-templates-tabs: #000;
+	
+	--lqd-active-bg-btn: #000;
+	--lqd-active-bg-grid: #000;
+	--lqd-active-bg-toggle: #3e3e3e;
+	--lqd-active-bg-toggle-handle: #fff;
+	--lqd-active-bg-btnset: #4A4A4A;
+	--lqd-active-bg-toggle-nolabel: #3b3b3b;
+
+	--lqd-active-outline-popup-opts: rgba(#000, 0.5);
+
+	--lqd-sidebaractive-bg-nav: #27292c;
+	
+	--lqd-sidebaractive-width-navbar: 670px;
+
+	--lqd-dragging-bg-carousel-item: #313131;
+
+	--lqd-height-navbar: 55px;
+
+	--lqd-sidebar-width: 370px;
+
+	--lqd-shadow-popup: 10px 15px 90px rgba(#000, 0.12);
+
+	--lqd-radius-popup: 4px;
+
+	--lqd-url-arrow-down: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D%2220%22%20height%3D%2220%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M5%206l5%205%205-5%202%201-7%207-7-7%202-1z%22%20fill%3D%22%23555%22%2F%3E%3C%2Fsvg%3E');
+	--lqd-url-nav-logo-color: url('../liquid/logo/liquid-logo.svg');
+	--lqd-url-nav-logo: url('../liquid/logo/liquid-logo-white.svg');
+	--lqd-url-nav-spinner: url('../vc/loaders/spinner.svg');
+
+	--expo-out: cubic-bezier(0.19, 1, 0.22, 1);
+
+}
+
+:root.lqd-sidebar-active {
+
+	--lqd-txt-grid: rgba(#000, 0.7);
+	--lqd-txt-btn-nav: #fff;
+	
+	--lqd-bg-nav: var(--lqd-sidebaractive-bg-nav);
+	--lqd-bg-popup: #fff;
+	--lqd-bg-popup-header: #fff;
+	--lqd-bg-grid: transparent;
+	--lqd-bg-responsive-params: #f5f5f5;
+	
+	--lqd-active-txt-grid: rgba(#000, 0.7);
+
+	--lqd-active-bg-grid: #f8f8f8;
+
+	--lqd-outline-popup-opts: rgba(#000, 0.2);
+
+	--lqd-url-nav-logo: var(--lqd-url-nav-logo-color);
+
+}
+
+:root.lqd-dark-mode {
+
+	--lqd-txt-btn: #fff;
+	--lqd-txt-nav: #404040;
+	--lqd-txt-btn-nav: #fff;
+	--lqd-txt-grid: rgba(#fff, 0.85);
+	--lqd-txt-popup-title: #fff;
+	--lqd-txt-popup-label-group: rgba(#fff, 0.55);
+	--lqd-txt-popup-label-opt: rgba(#fff, 0.48);
+	--lqd-txt-popup-label-tab: #979797;
+	--lqd-txt-toggle: rgba(#fff, 0.65);
+	--lqd-txt-btnset: #fff;
+	--lqd-txt-active: #27292c;
+	--lqd-txt-control: #27292c;
+	--lqd-txt-inputs: #fff;
+	--lqd-txt-panel-title: #fff;
+	--lqd-txt-panel-controls: #fff;
+	--lqd-txt-css-editor-inputs: rgba(#fff, 0.6);	
+	--lqd-txt-responsive-params: rgba(#fff, 0.65);	
+
+	--lqd-bg-popup: #27292c;
+	--lqd-bg-popup-header: #2b2d31;
+	--lqd-bg-grid: rgba(#fff, 0.02);
+	--lqd-bg-nav: #2b2d31;
+	--lqd-bg-btn: #27292c;
+	--lqd-bg-nav-hover: rgba(#fff, 0.1);
+	--lqd-bg-popup-dropdown: #2e3134;
+	--lqd-bg-toggle: #303336;
+	--lqd-bg-toggle-handle: rgba(#fff, 0.25);
+	--lqd-bg-slider-handle: #27292c;
+	--lqd-bg-active: #fff;
+	--lqd-bg-control: #27292c;
+	--lqd-bg-inputs: #fff;
+	--lqd-bg-css-editor-margin: var(--lqd-bg-popup);
+	--lqd-bg-css-editor-border: #323639;
+	--lqd-bg-css-editor-padding: #3b4043;
+	--lqd-bg-css-editor-inputs: #44484b;
+	--lqd-bg-responsive-params: #303336;
+	--lqd-bg-backdrop: rgba(#000, 0.5);
+	--lqd-bg-backdrop-opposite: rgba(#fff, 0.85);
+	--lqd-bg-toggle-nolabel: #41464a;
+	--lqd-bg-desc: rgba(#fff, 0.47);
+	--lqd-bg-btn-save: var(--lqd-color-primary);
+	--lqd-bg-preloader: rgba(#000, 0.85);
+
+	--lqd-outline-nav: #202226;
+	--lqd-outline-popup-opts: rgba(#fff, 0.21);
+	--lqd-outline-popup-divider: rgba(#fff, 0.1);
+	--lqd-outline-btnset: rgba(#dbdbdb, 0.11);
+	--lqd-outline-css-editor-margin: #707070;
+	--lqd-outline-css-editor-border: #323639;
+	--lqd-outline-css-editor-padding: #3b4043;
+	--lqd-outline-css-editor-inputs: #44484b;
+
+	--lqd-active-txt-btn: #27292c;
+	--lqd-active-txt-grid: #000;
+	--lqd-active-txt-popup-label-tab: #fff;
+	--lqd-active-txt-toggle: #fff;
+	--lqd-active-txt-btnset: #fff;
+	
+	--lqd-active-bg-btn: #fff;
+	--lqd-active-bg-grid: #fff;
+	--lqd-active-bg-toggle: #3e3e3e;
+	--lqd-active-bg-btnset: #4A4A4A;
+	--lqd-active-bg-toggle-nolabel: var(--lqd-color-primary);
+
+	--lqd-active-outline-popup-opts: rgba(#fff, 0.5);
+
+	--lqd-sidebaractive-bg-nav: var(--lqd-bg-nav);
+	
+	--lqd-url-arrow-down: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D%2220%22%20height%3D%2220%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M5%206l5%205%205-5%202%201-7%207-7-7%202-1z%22%20fill%3D%22%23fff%22%2F%3E%3C%2Fsvg%3E');
+	--lqd-url-nav-logo: var(--lqd-url-nav-logo-color);
+	--lqd-url-nav-spinner: url('../vc/loaders/spinner-light.svg');
+
+}

@@ -1,0 +1,83 @@
+@vc_gitem_min_height: 50px;
+@vc_gitem_element_margin_bottom: 5px;
+@vc_gitem_round_radius: 3px;
+// Base
+.vc_gitem-shortcode {
+  margin: 10px auto 0;
+  width: 96%;
+  .vc_control {
+    font-size: 13px;
+  }
+  .column_edit {
+    font-size: 14px;
+  }
+  > .vc-controls {
+    .vc-icon {
+      background-image: url('../vc/fe/controls.png');
+      background-repeat: no-repeat;
+    }
+  }
+  .vc_shortcodes_container {
+    background: transparent;
+    > .wpb_element_wrapper > .vc_container_for_children {
+      outline: 0;
+    }
+    .controls_column {
+      overflow: hidden;
+    }
+  }
+}
+
+.vc_gitem-add-c-col {
+  vertical-align: top;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  outline: 1px dotted #e6e6e6;
+  min-height: @vc_gitem_min_height;
+  cursor: pointer;
+  box-sizing: border-box;
+  position: relative;
+  &::before {
+    font-family: 'vcpb-plugin-icons' !important;
+    content: @vc-c-icon-add_element;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    color: #848c92;
+    font-size: 20px;
+  }
+
+  .vc_gitem-add-c-left &, .vc_gitem-add-c-right & {
+    padding-top: 26px;
+  }
+  &:hover {
+    opacity: 0.5;
+  }
+  &.vc_zone-added {
+    outline: 0;
+    background: none;
+    .vc_gitem-add-c-bottom & {
+      margin-top: 30px;
+    }
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+.vc_gitem-navbar-dropdown {
+  padding: 15px;
+}
+
+#wpb_visual_composer {
+  a {
+    box-shadow: none;
+  }
+}
+
+@import "preview.less";
+@import "shortcodes/vc_gitem_animated_block_admin.less";
+@import "shortcodes/vc_gitem_zone_admin.less";
+@import "shortcodes/vc_gitem_row_admin.less";

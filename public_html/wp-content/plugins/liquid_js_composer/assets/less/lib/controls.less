@@ -1,0 +1,454 @@
+// Controls
+.vc_controls {
+  height: 0;
+  display: flex;
+  opacity: 0;
+  visibility: hidden;
+  align-items: center;
+  justify-content: center;
+
+  > div {
+    display: flex;
+    position: absolute;
+    white-space: nowrap;
+    box-shadow: 0 5px 15px -2px rgba(#000, 0.15);
+
+    > .vc_parent,
+    > .vc_element {
+      display: inline-flex;
+      align-items: center;
+    }
+  }
+  .vc_controls-bc {
+    box-shadow: none;
+  }
+  //Controls positions
+  > .vc_controls- {
+    
+    &tl {
+      //top left
+      top: 0;
+      left: 0;
+      z-index: 1002;
+    }
+    &tc {
+      //top center
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, 0);
+      z-index: 1002;
+    }
+    &tr {
+      //top right
+      top: 0;
+      right: 0;
+      // direction: rtl;
+      z-index: 1002;
+    }
+
+    &bl {
+      //bottom left
+      bottom: 0;
+      left: 0;
+      height: auto;
+      z-index: 1002;
+    }
+    &bc {
+      //bottom center
+      bottom: 0;
+      left: 50%;
+      transform: translate(-50%, 0);
+      z-index: 1;
+    }
+    &br {
+      //bottom right
+      bottom: 0;
+      right: 0;
+      // direction: rtl;
+      z-index: 1002;
+    }
+
+    &cc {
+      //vertical middle
+      z-index: 1002;
+      top: 50%;
+      left: 50%;
+      border: 0px solid transparent;
+      transform: translate(-50%, -50%);
+    }
+    &out-tc {
+      left: 50%;
+      top: -30px;
+      // direction: rtl;
+      transform: translate(-50%, 0);
+    }
+    &out-l {
+      //out left
+      left: 0px;
+      top: 1px;
+      // direction: rtl;
+    }
+    &out-tl {
+      //out left
+      z-index: 1002;
+      left: -1px;
+      top: -30px;
+    }
+    &out-tr {
+      //out left
+      z-index: 1003;
+      right: -1px;
+      top: -30px;
+    }
+    &out-r {
+      //out right
+      right: -1px;
+      top: 1px;
+    }
+    &out-l,
+    &out-r {
+      width: 0;
+      height: 0;
+    }
+  }
+  .vc_control-container {
+
+    a {
+      color: var(--lqd-txt-control);
+    }
+  }
+  // Single Control button
+  .vc_control-btn {
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    text-decoration: none;
+    background-color: var(--lqd-bg-control);
+    color: var(--lqd-txt-control);
+
+    &:hover {
+      background-color: var(--lqd-color-primary);
+      color: var(--lqd-active-txt-btn);
+    }
+  }
+}
+
+// Section controls
+.vc_vc_section {
+
+  .vc_section-has-fill ~ .vc_controls-container > .vc_controls-out-tl {
+    top: 1px !important;
+  }
+  > .vc_controls {
+
+    > .vc_controls-out-tl {
+      left: -17px;
+      top: -61px;
+    }
+  }
+  &.vc_empty {
+
+    > .vc_controls {
+
+      > .vc_controls-out-tl {
+        top: -29px;
+      }
+    }
+  }
+  > [data-vc-full-width="true"] {
+
+    ~ .vc_controls {
+
+      > .vc_controls-out-tl {
+        top: -29px;
+      }
+    }
+    > .vc_vc_row {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+  }
+  > .vc_parallax {
+
+    ~ .vc_controls {
+
+      > .vc_controls-out-tl {
+        top: -29px;
+      }
+    }
+  }
+}
+
+.vc_btn-content {
+  display: inline-flex;
+  align-items: center;
+  padding: 7px;
+  background-color: transparent;
+  font-size: 16px;
+  transition: background-color 0.5s;
+}
+
+.vc_control-btn-layout {
+
+  .vc_btn-content {
+    font-size: 10px;
+  }
+}
+
+.vc_element-name {
+
+  .vc_btn-content {
+    font-size: 13px;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+.vc_element-move,
+.vc_child-element-move {
+
+  .vc_btn-content {
+    cursor: move;
+  }
+  i {
+    margin-right: 4px;
+    
+    &:not(:only-child) {
+      margin: 0;
+      position: absolute;
+      top: 50%;
+      left: 15px;
+      transform: translate(-50%, -50%);
+      font-size: 1.5em;
+      transition: transform 0.3s, opacity 0.3s;
+    }
+    &.la-rotate-90 {
+      transform: translate(-50%, -50%) rotate(90deg);
+    }
+    &:first-child:not(:only-child) {
+      opacity: 0;
+    }
+  }
+  &:hover {
+
+    i {
+
+      &:first-child:not(:only-child) {
+        opacity: 1;
+      }
+      &:last-child:not(:only-child) {
+        opacity: 0;
+      }
+    }
+  }
+}
+
+// Control icons variations
+.vc_control-btn-append {
+  position: relative;
+  top: 19px;
+
+  &:before {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: -4px;
+    left: 7px;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid var(--lqd-bg-control);
+    transition: border 0.3s;
+  }
+  .vc_btn-content {
+    padding: 4px;
+  }
+  &:hover {
+
+    &:before {
+      border-bottom-color: var(--lqd-color-primary);
+    }
+  }
+}
+
+.vc_control-btn-switcher {
+  display: inline-block;
+  width: 24px;
+  height: 30px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: width 0.65s var(--expo-out);
+
+  &-disable-switcher {
+    display: none !important;
+  }
+  > span {
+    padding-left: 4px;
+    padding-right: 4px;
+  }
+}
+.vc_controls-row,
+.vc_controls-column,
+.vc_controls-container {
+
+  > div {
+
+    .vc_advanced {
+      display: flex;
+      overflow: hidden;
+      height: 30px;
+      width: 0;
+      transition: width 0.65s var(--expo-out);
+    }
+    > .vc_active {
+
+      .vc_control-btn-switcher {
+
+        i {
+
+          &:before {
+            content: "\f0d9";
+          }
+        }
+      }
+      &.vc_parent,
+      &.vc_element {
+
+        .vc_advanced {
+          width: 120px;
+        }
+      }
+      &.parent-vc_row,
+      &.parent-vc_row_inner {
+
+        .vc_advanced {
+          width: 155px;
+        }
+      }
+      // &.element-vc_column,
+      // &.element-vc_column_inner {
+
+      //   .vc_advanced {
+      //     width: 90px;
+      //   }
+      // }
+      &.element-vc_tab {
+
+        &.vc_element-name {
+
+          .vc_btn-content {
+            background-image: none;
+            padding-right: 6px;
+          }
+        }
+      }
+    }
+  }
+}
+.vc_controls-column {
+
+  > .vc_controls-tl,
+  > .vc_controls-out-tl {
+    left: 15px;
+  }
+}
+
+.vc_element-container {
+
+  > div.vc_container:first-of-type {
+    margin-top: 31px;
+  }
+}
+
+.vc_controls-visible {
+  opacity: 1 !important;
+  visibility: visible;
+}
+
+.vc_control-container {
+  background: @vc_controls_child_background;
+  border-color: @vc_controls_child_border;
+}
+
+.vc_controls-content-widget {
+  background: @vc_controls_parent_background;
+  border-color: @vc_controls_parent_border;
+  top: -17px !important;
+  // direction: ltr !important;
+
+  .vc_btn-content {
+
+    &:hover {
+      background-color: @vc_controls_parent_background_hover;
+    }
+  }
+}
+
+.vc_controls > div > a:first-child,
+.vc_controls-container .vc_element:only-child > a:first-child,
+.vc_controls > div .vc_parent > a:first-child {
+  border-radius: var(--lqd-radius-popup) 0 0 var(--lqd-radius-popup);
+}
+.vc_controls > div > a:last-child,
+.vc_controls-container .vc_element:only-child > a:last-child,
+.vc_controls > div .vc_element > a:last-child {
+  border-radius: 0 var(--lqd-radius-popup) var(--lqd-radius-popup) 0;
+}
+.vc_controls > div a.vc_control-btn-append {
+  border-radius: 25px;
+}
+
+
+.vc_controls-row {
+  
+  > div {
+    box-shadow: none;
+  }
+  a.vc_column-toggle,
+  > div > a:first-child {
+    border-radius: var(--lqd-radius-popup) 0 0 0;
+  }
+  a.vc_column-delete,
+  > div a:last-child {
+    border-radius: 0 var(--lqd-radius-popup) 0 0;
+  }
+}
+
+.vc_controls-carousel {
+  margin-left: 3px;
+  
+  &.playpause-hide > div > [data-vc-control="next"] {
+    border-radius: 0 var(--lqd-radius-popup) var(--lqd-radius-popup) 0;
+  }
+  .vc_control-btn-control-playpause {
+
+    i {
+
+      + i {
+        margin-left: -0.5em;
+      }
+    }
+  }
+  &.playpause-hide {
+
+    .vc_control-btn-control-playpause {
+      display: none;
+    }
+  }
+}
+
+[dir=rtl] {
+
+  .vc_controls-row {
+  
+    a.vc_column-toggle,
+    > div > a:first-child {
+      border-radius: 0 var(--lqd-radius-popup) 0 0;
+    }
+    a.vc_column-delete,
+    > div a:last-child {
+      border-radius: var(--lqd-radius-popup) 0 0 0;
+    }
+  }
+}

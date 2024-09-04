@@ -1,0 +1,123 @@
+/* Button
+---------------------------------------------------------- */
+.wpb_vc_button {
+  
+  .wpb_element_wrapper {
+    background-image: none;
+    padding-left: 10px;
+    height: auto;
+    min-height: inherit;
+  }
+  .wpb_button {
+    display: inline-block;
+    position: relative;
+    padding: 5px 10px 4px;
+    margin-bottom: 0;
+    color: #333333;
+    text-align: center;
+    vertical-align: middle;
+    cursor: default;
+    background-image: linear-gradient(top, #ffffff, #e6e6e6);
+    background-repeat: repeat-x;
+    border-color: #e6e6e6 #e6e6e6 #bfbfbf;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    border: 1px solid #cccccc;
+    border-bottom-color: #b3b3b3;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, .2), 0 1px 2px rgba(0, 0, 0, .05);
+
+    i.icon {
+      margin-bottom: -3px;
+      margin-left: 10px;
+      top: -2px;
+      position: relative;
+      width: 16px;
+      height: 16px;
+    }
+  }
+  // Button sizes
+  .btn-large {
+    padding: 9px 14px 7px;
+    font-size: 110%;
+    border-radius: 5px;
+
+    i.icon {
+      margin-bottom: -3px;
+      margin-left: 14px;
+      top: -1px;
+    }
+  }
+  .btn-small {
+    padding: 5px 9px 3px;
+    font-size: 90%;
+
+    i.icon {
+      margin-left: 8px;
+      margin-bottom: -4px;
+      top: -3px;
+    }
+  }
+  .btn-mini {
+    padding: 3px 6px 2px;
+    font-size: 85%;
+
+    i.icon {
+      display: none !important;
+    }
+  }
+  // Button colors
+  .btn-primary,
+  .btn-warning,
+  .btn-danger,
+  .btn-success,
+  .btn-info,
+  .btn-inverse {
+    color: #ffffff;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  }
+
+  .btn-primary {
+    //Blue
+    background-image: linear-gradient(top, #0088cc, #0055cc);
+    background-repeat: repeat-x;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+
+  }
+  .btn-info {
+    //Turqoise
+    background-image: linear-gradient(top, #5bc0de, #2f96b4);
+    background-repeat: repeat-x;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+
+  }
+  .btn-success {
+    //Green
+    background-image: linear-gradient(top, #62c462, #51a351);
+    background-repeat: repeat-x;
+
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  }
+  .btn-warning {
+    //Orange
+    background-image: linear-gradient(top, #fbb450, #f89406);
+    background-repeat: repeat-x;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+
+  }
+  .btn-inverse {
+    //Black
+    background-image: linear-gradient(top, #555555, #222222);
+    background-repeat: repeat-x;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+
+  }
+  .btn-danger {
+    //Red
+    background-image: linear-gradient(top, #ee5f5b, #bd362f);
+    background-repeat: repeat-x;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+
+  }
+}
+
+@import "../lib/wpb_icon.less";

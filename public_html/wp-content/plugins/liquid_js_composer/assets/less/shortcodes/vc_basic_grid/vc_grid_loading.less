@@ -1,0 +1,42 @@
+.vc_grid-loading {
+  &:before,
+  &:after,
+  & {
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+    animation-fill-mode: both;
+    animation: load7 1.8s infinite ease-in-out;
+  }
+  & {
+    margin: 2em auto;
+    font-size: 10px;
+    position: relative;
+    text-indent: -9999em;
+    animation-delay: 0.16s;
+    height: 20px;
+  }
+  &:before {
+    left: -20px;
+  }
+  &:after {
+    left: 20px;
+    animation-delay: 0.32s;
+  }
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+  }
+  @keyframes load7 {
+    0%,
+    80%,
+    100% {
+      box-shadow: 0 2.5em 0 -1.3em rgba(235, 235, 235, 0.75);
+    }
+    40% {
+      box-shadow: 0 2.5em 0 0 rgba(235, 235, 235, 0.75);
+    }
+  }
+}

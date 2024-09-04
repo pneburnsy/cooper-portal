@@ -1,0 +1,116 @@
+.vc_ui-tabs-line {
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  flex-grow: 1;
+  list-style: none;
+  // flex-wrap: nowrap;
+  // white-space: nowrap;
+  // overflow-x: scroll;
+  font-size: 13px;
+
+  > li {
+    display: inline-flex;
+    margin: 0;
+    padding: 0;
+  }
+  .vc_ui-tabs-line-trigger {
+    width: 100%;
+    padding: 5px 25px 18px;
+    border: none;
+    border-bottom: 2px solid transparent;
+    border-radius: 0;
+    background: none;
+    font: inherit;
+    font-weight: 500;
+    color: var(--lqd-txt-popup-label-tab);
+    cursor: pointer;
+    
+    &:focus,
+    &:active {
+      box-shadow: none;
+      outline: none;
+    }
+  }
+  > .vc_active {
+
+    > .vc_ui-tabs-line-trigger {
+      border-bottom-color: currentColor;
+      color: var(--lqd-active-txt-popup-label-tab);
+      cursor: default;
+    }
+  }
+  .vc_ui-tabs-line-dropdown-toggle {
+    float: right;
+    position: absolute;
+    order: 2;
+    visibility: hidden;
+
+    &.vc_visible {
+      visibility: visible;
+      position: relative;
+    }
+    > .vc_ui-tabs-line-trigger {
+
+      &::after {
+        content: 'More ...';
+        display: inline;
+        font-weight: 600;
+        white-space: nowrap;
+      }
+    }
+    &.vc_active {
+
+      > .vc_ui-tabs-line-trigger {
+        cursor: pointer;
+      }
+    }
+  }
+  
+  .vc_ui-tabs-line-dropdown {
+    display: none;
+    padding: 10px 0;
+    margin: 0;
+    position: absolute;
+    z-index: 1001;
+    top: 100%;
+    right: 0;
+    overflow: hidden;
+    list-style: none;
+    transition: height 0.3s, padding 0.3s;
+    max-width: 320px;
+    box-shadow: var(--lqd-shadow-popup);
+    background: var(--lqd-bg-popup);
+    white-space: nowrap;
+
+    li {
+      margin: 0;
+      padding: 0;
+    }
+    .vc_ui-tabs-line-trigger {
+      padding: 10px 15px;
+    }
+    &.vc_active,
+    &.vc_animating {
+      display: block;
+    }
+    .vc_active {
+      
+      .vc_ui-tabs-line-trigger {
+        border-color: transparent;
+        color: var(--lqd-active-txt-popup-label-tab);
+        cursor: default;
+      }
+    }
+  }
+  
+  &.vc_initializing {
+    opacity: 0;
+  
+    > li:not(:first-child):not(.vc_ui-tabs-line-dropdown-toggle) {
+      position: absolute;
+      visibility: hidden;
+    }
+  }
+}

@@ -1,0 +1,51 @@
+// Loaders
+@vc_ui-wp-spinner-base-size: 16px;
+
+.vc_ui-wp-spinner {
+  margin: 0;
+  padding: 0;
+  height: 1em;
+  width: 1em;
+  display: inline-block;
+  vertical-align: middle;
+  opacity: .7;
+  position: relative;
+
+  &::before {
+    content: '';
+    display: block;
+    height: @vc_ui-wp-spinner-base-size;
+    width: @vc_ui-wp-spinner-base-size;
+    background: transparent var(--lqd-url-nav-spinner) 50% 50% no-repeat;
+    background-size: contain;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    animation: vc_ui-wp-spinner-animation 1.08s linear infinite;
+  }
+
+  &.vc_ui-wp-spinner-lg {
+    
+    &::before {
+      height: @vc_ui-wp-spinner-base-size * 2;
+      width: @vc_ui-wp-spinner-base-size * 2;
+    }
+  }
+  // &.vc_ui-wp-spinner-dark {
+
+  //   &::before {
+  //     background-image: url(@vc_ui-wp-spinner-svg-src);
+  //   }
+  // }
+}
+
+
+@keyframes vc_ui-wp-spinner-animation {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}

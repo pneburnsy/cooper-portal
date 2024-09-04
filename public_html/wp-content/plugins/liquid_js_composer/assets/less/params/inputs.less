@@ -1,0 +1,48 @@
+#vc_ui-panel-post-settings,
+.vc_shortcode-param {
+
+	.edit_form_line {
+		
+		textarea,
+		select,
+		input[type=number],
+		input[type=text] {
+			width: 100%;
+			max-width: none;
+			padding: 6px 0;
+			border: none;
+			border-bottom: 1px solid var(--lqd-outline-popup-opts);
+			border-radius: 0;
+			background-color: transparent;
+			color: var(--lqd-txt-inputs);
+			
+			&:focus {
+				border-bottom-color: var(--lqd-active-outline-popup-opts);
+				outline: none;
+				box-shadow: none;
+				color: var(--lqd-txt-inputs);
+			}
+		}
+		select {
+			
+			&:not([multiple]) {
+				padding-right: 30px;
+				background-size: 12px;
+				background-image: var(--lqd-url-arrow-down);
+			}
+			&:hover {
+				color: var(--lqd-txt-inputs);
+			}
+		}
+		option {
+			color: initial;
+		}
+		.wp-editor-area {
+			
+			&,
+			&:focus {
+				color: inherit;
+			}
+		}
+	}
+}

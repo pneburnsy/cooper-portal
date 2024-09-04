@@ -1,0 +1,142 @@
+@import "../vc_ui-button.less";
+@import "../vc_ui-dropdown.less";
+@import "../vc_ui-tabs-line.less";
+
+.vc_ui-panel-header-container {
+  
+  &.vc_ui-panel-header-o-stacked-bottom {
+    padding-bottom: 0;
+  }
+}
+
+.vc_ui-panel-header {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: var(--lqd-bg-popup-header);
+  border-radius: var(--lqd-radius-popup) var(--lqd-radius-popup) 0 0;
+
+  .vc_ui-panel-header-controls {
+    display: inline-grid;
+    min-width: 55px;
+    place-items: center;
+    grid-template-columns: repeat(3, auto);
+    padding-right: 15px;
+
+    .vc_ui-dropdown,
+    .vc_ui-control-button {
+      height: 56px;
+      min-width: inherit;
+      justify-content: center;
+      font-size: 24px;
+      color: var(--lqd-txt-panel-controls);
+    }
+    .vc_ui-dropdown {
+      display: inline-flex;
+
+      .vc_ui-dropdown-trigger {
+        display: flex;
+        height: inherit;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+    .vc_ui-dropdown-content {
+      left: auto;
+      right: 0;
+      font-size: 14px;
+    }
+  }
+
+  .vc_ui-panel-header-header {
+    display: inline-flex;
+    flex-flow: row wrap;
+    align-items: center;
+    flex-grow: 0.5;
+    margin-left: auto;
+  }
+
+  .vc_ui-panel-header-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex: 1 100%;
+    padding-left: 25px;
+
+    h3 {
+      margin: 0;
+      font-size: 19px;
+      font-weight: 700;
+      color: var(--lqd-txt-panel-title);
+    }
+  }
+
+  .vc_ui-panel-header-actions {
+    width: 100%;
+  }
+
+  .vc_ui-control-button {
+    margin: 0;
+    padding: 0;
+  }
+
+  .vc_ui-panel-header-content {
+    display: block;
+    width: 100%;
+    flex-grow: 1;
+    border-bottom: 1px solid var(--lqd-outline-popup-divider);
+  }
+
+  .vc-c-icon-switch_sidebar {
+    font-family: 'Line Awesome Free' !important;
+    font-weight: 900;
+
+    &:before {
+      content: '\f0db';
+    }
+  }
+}
+
+// search box
+.vc_ui-search-box {
+
+  input[type=search] {
+    display: inline-block;
+    width: 100%;
+    height: 44px;
+    margin: 0;
+    padding-left: 35px;
+    border: none;
+    border-bottom: 1px solid var(--lqd-outline-popup-opts);
+    border-radius: 0;
+    background: none;
+    line-height: normal;
+    font-size: 12px;
+    font-family: inherit;
+    color: var(--lqd-txt-inputs);
+    
+    &:focus {
+      outline: none;
+      box-shadow: none;
+      border-color: var(--lqd-active-txt-popup-label-tab);
+    }
+  }
+  .vc_ui-search-box-input {
+    position: relative;
+
+    label {
+      content: '';
+      display: block;
+      height: 24px;
+      width: 24px;
+      margin: auto;
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      cursor: pointer;
+      font-size: 22px;
+      color: var(--lqd-active-txt-popup-label-tab);
+    }
+  }
+}
+

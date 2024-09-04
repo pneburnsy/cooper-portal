@@ -1,0 +1,25 @@
+.vc_helper {
+  display: flex;
+  align-items: center;
+  width: auto !important;
+  height: auto !important;
+  box-sizing: border-box;
+  z-index: 1006;
+  position: absolute;
+  padding: 10px 20px;
+  background-color: var(--lqd-bg-control);
+  border-radius: var(--lqd-radius-popup);
+  box-shadow: var(--lqd-shadow-popup);
+  color: var(--lqd-txt-control);
+  font-size: 10px;
+
+  @import '../lib/elements_icons.less';
+
+  .vc_general.vc_element-icon {
+    display: inline-block;
+    margin: 0 8px 0 0;
+  }
+  &-tab {
+    width: auto !important;
+  }
+}

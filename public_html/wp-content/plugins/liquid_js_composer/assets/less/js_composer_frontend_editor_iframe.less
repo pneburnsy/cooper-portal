@@ -1,0 +1,151 @@
+// Fixes for theme css to enable correct representation of the page controls.
+@import "config/variables.less";
+
+// Some css fixes for WP themes.
+html.js_active {
+  margin-top: 0 !important;
+}
+
+// Default state for some html objectes for editor
+.vc_no-content-helper {
+  display: none;
+}
+
+.vc_catcher {
+  background-color: #e8ecb8
+}
+
+.compose-mode .vc_empty-placeholder {
+  margin-bottom: 30px;
+}
+
+.vc_hidden-placeholder {
+  display: none !important;
+}
+
+@import "modules/vc_welcome.less";
+@import "vendor/jwplayer.less";
+
+.vc_welcome {
+  display: none;
+}
+
+.vc_controls {
+  display: none;
+}
+
+// .view-mode,
+.compose-mode {
+
+  // Vc element settings
+  @import "lib/frontend_vc_elements.less";
+
+  // Helper information
+  .vc_welcome {
+    display: grid;
+    place-content: center;
+  }
+
+  .vc_hidden-xs {
+    @media (max-width: @screen-xs-max) {
+      .vc_frontend-editor-invisibility-settings;
+    }
+    .vc_hidden-xs {
+      opacity: 1;
+    }
+  }
+  .vc_hidden-sm {
+    @media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+      .vc_frontend-editor-invisibility-settings;
+    }
+    .vc_hidden-sm {
+      opacity: 1;
+    }
+  }
+  .vc_hidden-md {
+    @media (min-width: @screen-md-min) and (max-width: @screen-md-max) {
+      .vc_frontend-editor-invisibility-settings;
+    }
+    .vc_hidden-md {
+      opacity: 1;
+    }
+  }
+  .vc_hidden-lg {
+    @media (min-width: @screen-lg-min) {
+      .vc_frontend-editor-invisibility-settings;
+    }
+    .vc_hidden-lg {
+      opacity: 1;
+    }
+  }
+  &.vc_non_responsive {
+
+    .vc_row {
+
+      .vc_hidden-md {
+        .vc_frontend-editor-invisibility-settings;
+      }
+    }
+  }
+}
+
+.view-mode {
+
+  .vc_empty-element {
+
+    > .vc_column-inner {
+      min-height: 0;
+    }
+  }
+  // .vc_element {
+
+  //   &:hover {
+
+  //     > .vc_section,
+  //     &.vc_ld_images_group_container .lqd-imggrp-img-container,
+  //     &.vc_ld_carousel_marquee_tab .carousel-item-inner,
+  //     &.vc_ld_carousel_tab .carousel-item-inner,
+  //     .ld-media-row .masonry-item,
+  //     .wpb_wrapper-inner > .vc_element:hover,
+  //     > .wpb_row > .ld-container > .ld-row > .vc_vc_column > .wpb_column > .vc_column-inner > .wpb_wrapper {
+        
+  //       &:before {
+  //         outline: none;
+  //       }
+  //     }
+  //   }
+  // }
+  // .vc_vc_column.vc_empty {
+  //   display: none;
+  // }
+  // #vc_no-content-helper.vc_not-empty {
+  //   display: none;
+  // }
+  // .vc_element.vc_empty:not(.vc_sorting-over) .vc_empty-element:after {
+  //   content: none;
+  // }
+  // .vc_element.vc_empty .vc_empty-element,
+  // .vc_empty-element>.vc_column-inner,
+  // .vc_element .vc_element-container {
+  //   min-height: auto;
+  // }
+  // .vc_element.vc_empty .vc_empty-element {
+  //   cursor: auto;
+  // }
+  // .vc_resize-bar {
+  //   display: none;
+  // }
+}
+
+.compose-mode {
+  // Controls
+  @import "lib/controls.less";
+  @import "lib/controls-fe.less";
+  // Custom shortcodes settings
+  @import "lib/frontend_editor_controls.less";
+  // usefull classes for drag&drop/sorting activity
+  @import "lib/frontend_draganddrop.less";
+  @import "lib/vc_pointer.less";
+}
+
+@import "shortcodes/tta/vc_tta-frontend-editor.less";

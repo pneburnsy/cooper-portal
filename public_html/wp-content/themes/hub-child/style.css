@@ -1,0 +1,456 @@
+/*
+Theme Name: Hub Child
+Theme URI: http://hub.liquid-themes.com/
+Author: Liquid Themes
+Author URI: https://themeforest.net/user/liquidthemes
+Template: hub
+Description: Smart, Powerful and Unlimited Customizable WordPress Theme.
+Version: 1.0
+License: GNU General Public License
+License URI: license.txt
+Text Domain: hub-child
+Tags: responsive, retina, rtl-language-support, blog, portfolio, custom-colors, live-editor
+*/
+
+#post-404 {
+  min-height: 80vh !important;
+}
+
+.page-404 .btn {
+  background-color: #3795c5 !important;
+  border-radius: 4px !important;
+  color: #fff !important;
+  border: none !important;
+}
+.text-404 h1 {
+  color: #3795c5 !important;
+}
+.form_submitted {
+  background-color: #df2324;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin: 0 0 20px;
+  display: block;
+  text-align: center;
+  font-weight: bold;
+}
+@media (max-width: 782px) {
+  body .ics-calendar-month-grid .today .day, body .ics-calendar-month-grid .past .day, body .ics-calendar-month-grid .future .day {
+    background-color: #3795c5 !important;
+    color: #fff !important;
+  }
+  body .ics-calendar-month-grid .today, body .ics-calendar-month-grid .past, body .ics-calendar-month-grid .future {
+    margin-bottom: 30px !important;
+  }
+  body .ics-calendar:not(.nomobile) .ics-calendar-month-grid ul.events li {
+    border-bottom: none !important;
+    margin: 20px 20px !important;
+    background-color: #fff !important;
+    border: 1px solid #d7d7d7 !important;
+    box-shadow: 0px 0px 20px rgb(0 0 0 / 10%) !important;
+    color: #1a1e31 !important;
+    font-size: 12px !important;
+    line-height: 18px !important;
+  }
+  .ics-calendar:not(.nomobile) .ics-calendar-month-grid td {
+    height: auto !important;
+    border-radius: 5px !important;
+    overflow: hidden !important;
+  }
+  body .status, body table td {
+    font-size: 12px !important;
+    line-height: 18px !important;
+  }
+}
+body .ics-calendar-past-events-toggle, body:not(#tinymce) .ics-calendar:not(.nomobile) .phone_only.inline_block:not(.hidden)  {
+  display: none !important;
+}
+.btn-bordered:hover, .btn-solid:hover {
+  transform: translate3d(0, 0, 0) !important;
+  box-shadow: 0 12px 28px rgba(0,0,0,0) !important;
+}
+.igd-file-browser-header {
+  min-height: 7vh !important;
+}
+.igd-file-browser-body {
+  min-height: 90vh;
+  background: #f5f5f5 !important;
+}
+.igd-body {
+  background: #f5f5f5 !important;
+}
+.igd-shortcode-wrap.igd-shortcode-browser, .igd-shortcode-wrap.igd-shortcode-gallery, .igd-shortcode-wrap.igd-shortcode-search {
+  border-radius: 0 !important;
+  border: none !important;
+}
+body .igd-file-browser-header {
+  background-color: #fff !important;
+}
+body .igd-file-browser-header {
+  padding: 4px 10px !important;
+  height: fit-content !important;
+}
+.igd-body .file-list .file-item {
+  box-shadow: none !important;
+  transition: transform .3s ease !important;
+  border: 1px solid #e5e5e5 !important;
+}
+.igd-body .file-list .file-item .igd-file-thumbnail.has-thumbnail {
+  background: #fff !important;
+}
+.igd-body .file-list .file-item.folder-item .file-item-footer, .igd-body .file-list .file-item .file-item-footer {
+  padding: 10px 15px !important;
+}
+.igd-file-browser .igd-breadcrumb .breadcrumb-item, .igd-file-browser .igd-breadcrumb .breadcrumb-item:hover {
+  color: #fff !important;
+  background: #2077a4 !important;
+  padding: 10px 15px !important;
+}
+.igd-file-browser .igd-breadcrumb .breadcrumb-item:first-child, .igd-file-browser .igd-breadcrumb .breadcrumb-item {
+  margin: 10px 10px 10px 0 !important;
+  min-height: 42px !important;
+  background-color: #f5f5f5 !important;
+  color: #0a1630 !important;
+}
+.igd-body .file-list .file-item:hover {
+  transform: scale(1.0) !important;
+}
+.igd-body .file-list .go-prev:hover {
+  background: #3795c5 !important;
+  color: #fff !important;
+}
+.dashicons-arrow-left-alt:before {
+  font-size: 15px !important;
+  top: -2px !important;
+  position: relative !important;
+}
+.igd-root-placeholder svg {
+  display: none !important;
+}
+.igd-file-browser .igd-root-placeholder-title {
+  color: #3795c5 !important;
+}
+.igd-btn.btn-primary, .igd-file-uploader .igd-file-uploader-inner .igd-file-uploader-buttons button {
+  background-color: #3795c5 !important;
+  border-color: #3795c5 !important;
+}
+.igd-file-uploader.default .igd-file-uploader-inner {
+  background-color: transparent !important;
+  border: none !important;
+}
+.igd-file-uploader {
+  border: 1px dashed #ddd !important;
+  margin: 10px !important;
+}
+.swal2-icon.swal2-warning {
+  border-color: rgb(221, 51, 51) !important;
+  color: rgb(221, 51, 51) !important;
+}
+.igd-file-uploader .file-list-header, .igd-file-uploader .file-list-item .file-info-progress-bar {
+  background-color: #3795c5 !important;
+}
+.igd-body {
+  padding: 0px 0px !important;
+}
+.igd-body .file-list.list-view .file-item {
+  background-color: #fff !important;
+}
+.igd-body .file-list.list-view .file-item.go-prev:last-child:hover, .igd-body .file-list.igd-item-col-6 .file-item.go-prev {
+  background-color: #df2323 !important;
+  color: #fff !important;
+  margin-top: 8px !important;
+  width: 100% !important;
+}
+.igd-file-browser .igd-breadcrumb {
+  max-width: 100% !important;
+}
+@max-width(max-width:1200px) {
+  body .igd-file-browser .igd-root-placeholder {
+    margin: 10px !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+}
+.igd-file-browser .igd-root-placeholder, .igd-file-browser .igd-root-placeholder-title {
+  width: fit-content !important;
+  text-align: center !important;
+  min-width: fit-content !important;
+}
+@media (max-width: 800px) {
+  .igd-body .file-list.igd-item-col-3 .file-item {
+    width: 100% !important;
+  }
+}
+.igd-body .file-list.igd-item-col-2 .file-item, .igd-file-browser .igd-breadcrumb {
+  width: 100% !important;
+}
+.igd-body .file-list .file-item.active .file-item-footer {
+  background-color: #fff !important;
+}
+.swal2-styled.swal2-confirm {
+  background-color: #3795c5 !important;
+}
+@media (min-width: 1200px) {
+  body .mobile-only {
+    display: none !important;
+  }
+}
+body .igd-file-browser-header .header-action-item:hover {
+  background-color: #f5f5f5 !important;
+}
+body .react-contexify, body .react-contexify:hover {
+  border-radius: 5px !important;
+  overflow: hidden !important;
+}
+
+/* --- Holidays --- */
+
+.card {
+  margin-bottom: 30px;
+}
+.name .top {
+  color: #0a1630;
+  margin-top: 15px;
+  text-align: center;
+  display: block;
+  font-size: 12px;
+}
+.name .bottom {
+  color: #0a1630;
+  font-size: 24px;
+  font-weight: bold;
+  min-width: 100%;
+  display: block;
+  text-align: center;
+}
+.team_icon {
+  width: 40px;
+  height: 40px;
+  margin: auto;
+  padding: 9px 0px;
+  background-color: #3795c6;
+  text-align: center;
+  color: #fff;
+  border-radius: 30px;
+  font-weight: bold;
+}
+.department, .startdate {
+  text-align: center;
+  display: block;
+}
+.days {
+  background-color: rgb(40 168 29 / 25%)!important;
+  color: #54a963;
+  text-align: center;
+}
+.card-body table {
+  margin-bottom: 0 !important;
+}
+.days.orange {
+  background-color: rgb(253 184 94 / 25%)!important;
+  color: #fdb360;
+}
+.days.red {
+  background-color: rgba(253,98,94,.25)!important;
+  color: #fd6460;
+}
+.days .top {
+  font-size: 38px;
+  font-weight: bold;
+  min-width: 100%;
+  display: block;
+  text-align: center;
+  margin-bottom: 15px;
+}
+.days .bottom {
+  font-size: 16px;
+}
+.name {
+  margin-bottom: 20px;
+}
+.department {
+  margin-bottom: 7px;
+}
+.startdate {
+  margin-bottom: 0px;
+}
+.disclaimer {
+  text-align: center;
+  font-size: 12px;
+  color: #aeaeae;
+}
+table td {
+  border-inline-end: 0px solid #dedede !important;
+  font-size: 14px;
+}
+table, table tr {
+  border: none;
+}
+.status {
+  border-radius: 100px;
+  font-size: 12px;
+  background-color: rgba(253,98,94,.25)!important;
+  color: #fd6460;
+  padding: 5px 9px;
+}
+.status.approved {
+  background-color: rgb(40 168 29 / 25%)!important;
+  color: #54a963;
+}
+.holidays table {
+  border-radius: 5px;
+  overflow: hidden;
+}
+table thead th {
+  background-color: #3795c5 !important;
+  color: #fff !important;
+  border: none !important;
+  letter-spacing: 0 !important;
+  text-transform: capitalize !important;
+  font-size: 11.2px !important;
+}
+.ics-calendar-title {
+  display: none;
+}
+.ics-calendar-label {
+  font-size: 15px;
+  font-weight: bold;
+  padding-top: 7px;
+  margin-bottom: 20px !important;
+}
+.calendar tbody tr {
+  border-left: 1px solid #d7d7d7 !important;
+}
+.calendar tbody td {
+  border: 1px solid #d7d7d7 !important;
+  padding-bottom: 5px !important;
+}
+.ics-calendar-month-grid .past, .ics-calendar-month-grid .off {
+  background: #f5f5f5 !important;
+  color: #b3b3b3 !important;
+}
+.ics-calendar-month-grid .events .all-day-indicator, .ics-calendar-month-grid .events .time {
+  text-transform: capitalize !important;
+  letter-spacing: 0 !important;
+  font-size: 6.5px !important;
+}
+.ics-calendar-month-grid .events .title {
+  font-size: 6.5px !important;
+}
+body .ics-calendar-month-grid ul.events li.all-day, body .ics-calendar-month-grid ul.events > li:last-of-type, .ics-calendar-month-grid ul.events li {
+  font-weight: bold !important;
+  padding: 0.4em 0.8em !important;
+  padding: 5px !important;
+  margin: 5px 5px 0px 5px !important;
+  color: #fff !important;
+  background-color: #df2424 !important;
+  border-radius: 3px !important;
+  border: none !important;
+  border-bottom: none !important;
+}
+.all-day-indicator {
+  display: none !important;
+}
+.ics-calendar-month-grid .today .day {
+  background: #7bb2ce !important;
+  color: #ffffff !important;
+}
+td.today {
+  background-color: #f4fbff !important
+}
+.ics-calendar-month-grid th {
+  border: 1px solid #3795c4 !important;
+}
+.calendar table {
+  border-radius: 5px !important;
+  overflow: hidden !important;
+}
+.card-header {
+  background-color: #3795c5 !important;
+  color: #fff !important;
+}
+.ics-calendar-month-grid .past .day {
+  background: #f5f5f5 !important;
+}
+.ics-calendar-month-grid .day {
+  background-color: #fff !important;
+}
+.ics-calendar .events .time .show_on_hover {
+  visibility: visible !important;
+  font-size: 6.5px !important;
+  font-weight: 600 !important;
+}
+.past_title:first-child {
+  margin-top: 0 !important;
+}
+.past_title {
+  margin: 20px 0;
+}
+.card label {
+  width: 100%;
+  margin: 10px 0 !important;
+  font-size: 14px !important;
+}
+.card #to, .card #from, .card #totime, .card #fromtime, #message {
+  border: 1px solid #c5c5c5;
+  border-radius: 3px;
+  padding: 10px;
+  margin-bottom: 5px !important;
+}
+.ui-selectmenu-button.ui-button {
+  min-height: 50px;
+  position: relative;
+  top: -1px;
+  padding-top: 14px;
+}
+.ics-calendar-select {
+  margin: 0 15px 20px 0 !important;
+  border: 1px solid #c5c5c5 !important;
+  border-radius: 4px !important;
+  padding: 2px !important;
+  font-size: 14px !important;
+  background: #fff !important;
+}
+.ui-front .ui-state-active, .ui-front .ui-widget-content .ui-state-active, .ui-menu .ui-menu-item-wrapper {
+  padding: 10px 16px !important;
+}
+.card #to, .card #from, .card #totime, .card #fromtime {
+  width: 50%;
+}
+#message {
+  width: 100%;
+}
+.card .btn {
+  font-family: inherit;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  color: #fff;
+  background-color: #df2424;
+  font-weight: bold;
+}
+@media (max-width: 782px) {
+  body .past.has_events .day {
+    color: #0a1630 !important;
+    font-size: 14px !important;
+  }
+  body .calendar tbody tr {
+    border-left: 0px solid #d7d7d7 !important;
+  }
+  body .ics-calendar-month-grid ul.events li.all-day, body .ics-calendar-month-grid ul.events > li:last-of-type, .ics-calendar-month-grid ul.events li {
+    padding: 10px 15px 10px 15px !important;
+    margin: 5px 10px 5px 10px !important;
+  }
+  body .ics-calendar-month-grid .events .title {
+    font-size: 14px !important;
+  }
+  body .descloc.phone_only.hover_block {
+    border: none !important;
+    padding: 0px !important;
+    color: #fff !important;
+  }
+}
+body .ics-calendar-past-events-toggle a {
+  color: #3795c5 !important;
+}

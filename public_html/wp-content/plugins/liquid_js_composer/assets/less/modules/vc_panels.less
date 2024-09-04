@@ -1,0 +1,331 @@
+.vc_input-group {
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  .vc_form-control {
+    flex-grow: 1;
+    position: relative;
+    z-index: 2;
+    margin-bottom: 0;
+    margin-right: 15px;
+  }
+  .vc_template-save-btn {
+    white-space: nowrap;
+  }
+}
+
+.vc_panel-opacity {
+  height: 38px !important;
+  overflow: hidden !important;
+  min-height: 0;
+
+  &.vc_shortcode-edit-form {
+    padding-bottom: 0;
+  }
+  .vc_panel-footer, .vc_panel-body {
+    display: none;
+  }
+}
+
+.edit_form_line {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-grow: 1;
+}
+.wpb_element_label_container {
+  display: flex;
+  width: 40%;
+  align-items: center;
+  position: relative;
+}
+.vc_description_container {
+  padding-right: 12px;
+  margin-left: 10px;
+
+  &:before {
+    content: '?';
+    display: inline-flex;
+    width: 16px;
+    height: 16px;
+    border-radius: 8px;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--lqd-bg-desc);
+    color: var(--lqd-txt-control);
+  }
+  .vc_description {
+    display: inline-block;
+    width: 260px;
+    padding: 1em 1.5em;
+    border-radius: 3px;
+    position: absolute;
+    bottom: calc(100% + 10px);
+    left: 0;
+    z-index: 10;
+    opacity: 0;
+    visibility: hidden;
+    background-color: var(--lqd-bg-backdrop-opposite);
+    box-shadow: var(--lqd-shadow-popup);
+    backdrop-filter: blur(3px) saturate(120%) brightness(35%);
+    color: var(--lqd-txt-control);
+    transition: opacity 0.1s, visibility 0.1s;
+
+    a {
+      color: var(--lqd-txt-active);
+    }
+    .vc_column:first-of-type & {
+      bottom: auto;
+      top: calc(100% + 10px);
+    }
+  }
+  &:hover {
+
+    .vc_description {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
+
+.vc_google_fonts_form_field-preview-wrapper {
+  margin-top: 10px;
+}
+
+.vc_google_fonts_form_field-preview-container {
+
+  > span {
+    font-size: 20px;
+  }
+}
+
+// small panel sizes
+.vc_ui-panel {
+
+  &.vc_media-xs:not(.vc_media-sm):not(.vc_media-md):not(.vc_media-lg) {
+    
+    .vc_ui-panel-header-controls {
+      min-width: 40px;
+    }
+    .vc_ui-tabs-line {
+      width: 100%;
+    }
+    .vc_ui-panel-window-inner {
+      width: 100px;
+    }
+    .vc_ui-panel-content:not(.vc_properties-list-init) {
+      margin-top: 0 !important;
+    }
+    .vc_properties-list-init {
+      margin: auto;
+    }
+    .vc_shortcode-param {
+      flex-direction: column
+    }
+    .vc_shortcode-param,
+    .vc_row > div,
+    .vc_css-editor > div,
+    .ld-btn-group,
+    .edit_form_line,
+    .wpb_element_label_container {
+      width: 100%;
+      margin-left: 0;
+      margin-right: 0;
+    }
+    .vc_shortcode-param {
+      padding-bottom: 0;
+    }
+    .ld-btn-group .ld-btn {
+      flex-grow: 1;
+    }
+    .edit_form_line {
+      justify-content: flex-start;
+    }
+    .vc_layout-onion,
+    .wpb_element_label_container {
+      margin-bottom: 10px;
+    }
+    .vc_wrapper-param-type-el_id,
+    .vc_wrapper-param-type-textfield,
+    .vc_wrapper-param-type-dropdown,
+    .vc_wrapper-param-type-checkbox,
+    .vc_wrapper-param-type-colorpicker,
+    .vc_wrapper-param-type-vc_link,
+    .vc_wrapper-param-type-liquid_colorpicker {
+      flex-direction: row;
+
+      .wpb_element_label_container,
+      .edit_form_line {
+        flex-basis: 50%;
+        margin-bottom: 15px;
+        flex-wrap: wrap;
+      }
+      .edit_form_line {
+        justify-content: flex-end;
+      }
+    }
+    .vc_wrapper-param-type-href {
+
+      .edit_form_line {
+
+        .vc_href-form-field {
+          width: 100%;
+        }
+      }
+    }
+    .vc_wrapper-param-type-animation_style {
+
+      .vc_row {
+        display: flex;
+        width: 100%;
+        margin: 0;
+        align-items: flex-end;
+
+        > div {
+          width: auto;
+          padding: 0;
+          flex: 1 0;
+
+          &:first-child {
+            flex-basis: 70%;
+          }
+          &:last-child {
+            padding-left: 10px;
+            flex-basis: 30%;
+            text-align: right;
+          }
+        }
+      }
+    }
+    .vc_wrapper-param-type-google_fonts {
+
+      .edit_form_line {
+        flex-direction: column;
+        align-items: stretch;
+
+        .vc_google_fonts_form_field-preview-wrapper {
+
+          .wpb_element_label {
+            margin-bottom: 10px;
+          }
+        }
+      }
+    }
+    .vc_wrapper-param-type-checkbox {
+
+      .wpb_element_label_container {
+        flex-basis: 85%;
+      }
+    }
+    .vc_ui-tabs-line {
+      font-size: 12px;
+    
+      > .vc_edit-form-tab-control {
+        padding-left: 25px;
+
+        > .vc_ui-tabs-line-trigger {
+          padding: 15px 0;
+          border-bottom-width: 1px;
+        }
+      }
+      > .vc_ui-tabs-line-dropdown-toggle {
+
+        > .vc_ui-tabs-line-trigger {
+          padding: 15px;
+        }
+      }
+    }
+    .vc_column-offset-table > tbody > tr > td {
+      padding: 10px;
+    }
+    .vc_layout-onion,
+    .vc_settings {
+      width: 100%;
+    }
+    .vc_wrapper-param-type-select_preview {
+
+      ul.thumbnails.image_picker_selector {
+        margin: 0 -5px;
+      
+        li {
+          padding: 5px;
+          width: calc(100% / 2);
+        }
+      }
+    }
+    .vc_settings {
+      display: flex;
+      flex-wrap: wrap;
+
+      > li,
+      > label,
+      > div {
+        width: 100%;
+      }
+      > label,
+      > div {
+        order: 2;
+        margin: 5px 0;
+        align-items: center;
+      }
+      div.color-group,
+      div.vc_border-style,
+      div.vc_border-radius,
+      > label:nth-last-child(1) {
+        width: 60%;
+      }
+      > label {
+
+        &:nth-child(1),
+        &:nth-child(3),
+        &:nth-child(5),
+        &:nth-last-child(2) {
+          width: 40%;
+        }
+        &:nth-last-child(1),
+        &:nth-last-child(2) {
+          order: -1;
+        }
+        &:nth-last-child(1) {
+          justify-content: flex-end;
+          margin-top: 5px;
+          margin-bottom: 10px;
+        }
+      }
+      div.color-group {
+
+        &:nth-child(2) {
+
+          .vc_color-picker {
+            flex-direction: row-reverse;
+
+            .wp-picker-holder {
+              left: auto !important;
+              right: 0;
+            }
+          }
+        }
+      }
+    }
+    .vc_shortcode-param .vc_css-editor .vc_settings .color-group .wp-picker-container .wp-picker-holder {
+      left: 0;
+    }
+    .vc_wrapper-param-type-colorpicker {
+
+      .wp-picker-container {
+  
+        .color-group {
+          width: 100% !important;
+        }
+        &.vc_color-picker {
+          justify-content: flex-end;
+  
+          .wp-picker-holder {
+            right: 0;
+          }
+        }
+      }
+    }
+  }
+}

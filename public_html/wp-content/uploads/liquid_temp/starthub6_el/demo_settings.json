@@ -1,0 +1,16 @@
+{
+	"home_page_title": "StartHub Six Homepage",
+	"menus": {
+		"primary": "Primary"
+	},
+	"templates": {
+		"header-template": "Main Header",
+		"footer-template": "Main Footer"
+	},
+	"content_plugins": {
+		"hub-core": "Hub Core",
+        "elementor": "Elementor",
+        "hub-elementor-addons": "Hub Elementor Addons",
+        "contact-form-7": "Contact Form 7"
+	}
+}

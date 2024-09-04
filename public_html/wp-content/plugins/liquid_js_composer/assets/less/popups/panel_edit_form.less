@@ -1,0 +1,250 @@
+.vc_shortcode-edit-form {
+  padding-bottom: 61px;
+
+  .vc_panel-footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+}
+
+.vc_wrapper-param-type-liquid_attach_image,
+.vc_wrapper-param-type-colorpicker,
+.vc_wrapper-param-type-checkbox,
+.vc_wrapper-param-type-liquid_button_set,
+.vc_wrapper-param-type-el_id,
+.vc_wrapper-param-type-textfield,
+.vc_wrapper-param-type-dropdown,
+.vc_wrapper-param-type-liquid_slider,
+.vc_wrapper-param-type-vc_link,
+.vc_wrapper-param-type-liquid_colorpicker {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#wpb_csseditor,
+.wpb-textarea
+.vc_param_group-list,
+.vc_css-editor,
+.vc_column-offset,
+.wp-editor-wrap,
+.vc-param-el_id {
+  flex-grow: 1;
+}
+
+.wpb-textarea,
+.vc_css-editor,
+.vc_column-offset,
+.wp-editor-wrap {
+  margin-top: 8px;
+}
+
+/* Content element Edit screen
+---------------------------------------------------------- */
+.vc_dependent-hidden {
+  display: none !important;
+}
+
+.wpb_element_label,
+.vc_element_label {
+  font-weight: 500;
+}
+
+.vc_edit_form_elements {
+
+  .vc_column {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+  // .vc_column-with-padding {
+  //   padding-top: 30px;
+  // }
+  .quicktags-toolbar {
+    padding-top: 0;
+    
+    input {
+      width: auto;
+      padding: 2px 4px;
+    }
+  }
+  input {
+    padding-bottom: 7px;
+  }
+  input.wp-color-picker[type="text"] {
+    width: 90px !important;
+    padding: 4px 3px 3px;
+    height: 24px;
+    float: left;
+    position: relative;
+  }
+  .wp-color-result.wp-picker-open:after {
+    content: "";
+    border: none;
+  }
+  .vc_color-picker .wp-picker-input-wrap label {
+    margin-top: 0;
+  }
+  input.wp-picker-clear {
+    width: auto;
+  }
+}
+
+/* Select Image / Select Images (multiple)
+---------------------------------------------------------- */
+.wpb_el_type_attach_images .gallery_widget_attached_images_list {
+  cursor: move;
+}
+
+.gallery_widget_site_images {
+  display: none;
+}
+
+.wpb_vc_tab,
+.wpb_vc_accordion_tab {
+  display: none;
+}
+
+.vc_hidden-placeholder {
+  display: none;
+}
+
+#TB_overlay {
+  z-index: 1055;
+}
+
+#TB_window {
+  z-index: 1060;
+}
+
+
+// Color field
+// .vc_colored-dropdown {
+
+//   .vc_edit_color_option_variants(~'blue', @blue, #ffffff);
+//   .vc_edit_color_option_variants(~'turquoise', @turquoise, #ffffff);
+//   .vc_edit_color_option_variants(~'pink', @pink, #ffffff);
+//   .vc_edit_color_option_variants(~'violet', @violet, #ffffff);
+//   .vc_edit_color_option_variants(~'peacoc', @peacoc, #ffffff);
+//   .vc_edit_color_option_variants(~'chino', @chino, #ffffff);
+//   .vc_edit_color_option_variants(~'mulled_wine', @mulled_wine, #ffffff);
+//   .vc_edit_color_option_variants(~'mulled-wine', @mulled_wine, #ffffff);
+//   .vc_edit_color_option_variants(~'vista_blue', @vista_blue, #ffffff);
+//   .vc_edit_color_option_variants(~'vista-blue', @vista_blue, #ffffff);
+//   .vc_edit_color_option_variants(~'black', @black, #ffffff);
+//   .vc_edit_color_option_variants(~'grey', @grey, #666666);
+//   .vc_edit_color_option_variants(~'orange', @orange, #ffffff);
+//   .vc_edit_color_option_variants(~'sky', @sky, #ffffff);
+//   .vc_edit_color_option_variants(~'green', @green, #ffffff);
+//   .vc_edit_color_option_variants(~'juicy_pink', @juicy_pink, #ffffff);
+//   .vc_edit_color_option_variants(~'juicy-pink', @juicy_pink, #ffffff);
+//   .vc_edit_color_option_variants(~'sandy_brown', @sandy_brown, #ffffff);
+//   .vc_edit_color_option_variants(~'sandy-brown', @sandy_brown, #ffffff);
+//   .vc_edit_color_option_variants(~'purple', @purple, #ffffff);
+//   .vc_edit_color_option_variants(~'white', @white, #666666);
+//   .vc_edit_color_option_variants(~'custom', @white, #000000);
+// }
+
+// // Color field extension for progress bar shortcode only
+// [data-vc-shortcode="vc_progress_bar"] .vc_colored-dropdown {
+//   .vc_edit_color_option_variants(~'bar_blue', #0074CC, #ffffff);
+//   .vc_edit_color_option_variants(~'bar_turquoise', #49afcd, #ffffff);
+//   .vc_edit_color_option_variants(~'bar_green', #5bb75b, #ffffff);
+//   .vc_edit_color_option_variants(~'bar_orange', #faa732, #ffffff);
+//   .vc_edit_color_option_variants(~'bar_red', #da4f49, #ffffff);
+//   .vc_edit_color_option_variants(~'bar_black', #414141, #ffffff);
+//   .vc_edit_color_option_variants(~'bar_grey', #e0e0e0, #ffffff);
+// }
+
+// option, select {
+
+//   &.btn-primary {
+//     &:extend(.wpb_vc_button .btn-primary);
+//     border-width: 0;
+//   }
+//   &.btn-info {
+//     &:extend(.wpb_vc_button .btn-info);
+//     border-width: 0;
+//     text-shadow: none;
+//   }
+//   &.btn-success {
+//     &:extend(.wpb_vc_button .btn-success);
+//     border-width: 0;
+//   }
+//   &.btn-warning {
+//     &:extend(.wpb_vc_button .btn-warning);
+//     border-width: 0;
+//   }
+//   &.btn-inverse {
+//     &:extend(.wpb_vc_button .btn-inverse);
+//     border-width: 0;
+//   }
+//   &.btn-danger {
+//     &:extend(.wpb_vc_button .btn-danger);
+//     border-width: 0;
+//   }
+// }
+
+// .vc_shortcode-edit-form-deprecated-message {
+//   padding-bottom: 15px;
+
+//   .wpb_element_wrapper .vc_message_box {
+//     margin: 0;
+//     padding: 0 1em 1em 4em;
+//   }
+// }
+
+@import "../params/subheading.less";
+@import "../params/inputs.less";
+@import "../params/sorted_list.less";
+@import "../params/image-picker.less";
+@import "../params/css_editor.less";
+@import "../params/options_field.less";
+@import "../params/vc_message_color.less";
+@import "../params/colorpicker.less";
+@import "../params/vc_link.less";
+@import "../params/loop.less";
+@import "../params/column_offset.less";
+@import "../params/autocomplete.less";
+@import "../params/param_group.less";
+@import "../params/vc_grid.less";
+@import "../params/vc_grid_element.less";
+@import "../params/iconpicker.less";
+@import "../params/dropdown.less";
+@import "../params/hidden.less";
+@import "../params/gutenberg.less";
+@import "../params/checkbox.less";
+@import "../params/button-set.less";
+@import "../params/shape-divider.less";
+@import "../params/slider.less";
+@import "../params/select-preview.less";
+@import "../params/wp-button.less";
+@import "../lib/css3_animations.less";
+
+// Fix link height due to rel noopener
+.has-text-field.vc-link-wrapper #wp-link #search-panel .query-results {
+  top: 215px;
+}
+.vc-link-nofollow {
+  display: none;
+}
+.vc-link-wrapper {
+
+  .vc-link-nofollow {
+    display: block;
+  }
+}
+
+.vc_ui-panel-window {
+
+  .wp-editor-container {
+    color: #595959;
+
+    .wp-core-ui & {
+      
+      .button:not(.wp-color-result) {
+        color: #595959;
+      }
+    }
+  }
+}

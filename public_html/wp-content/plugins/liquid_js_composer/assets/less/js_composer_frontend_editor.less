@@ -1,0 +1,492 @@
+@import "lib/bootstrap-components.less";
+@import "lib/editor.less";
+// Navbar
+@import "modules/vc_navbar.less";
+
+.vc_navbar {
+  .navbar-fixed-top();
+}
+
+@import "lib/elements_icons.less";
+// Add element box
+@import "popups/modal_add_element.less";
+// Edit form for shortcode
+@import "popups/panel_edit_form.less";
+// Template library
+@import "popups/panel_template_library";
+// Page Settings
+@import "popups/modal_page_settings";
+// For param group and other controls
+@import "lib/controls.less";
+@import "lib/backend_controls.less";
+@import "backend_shortcodes/empty_containers.less";
+// Templates
+@import "modules/ui/vc_ui-panel-templates.less";
+//Presets
+@import "modules/ui/vc_ui-panel-preset.less";
+// Vc Button
+@import (reference) "backend_shortcodes/vc_button.less";
+
+@import (reference)"shortcodes/vc_button3.less";
+@import "shortcodes/vc_button3_editform.less";
+
+@import (reference)"shortcodes/vc_icon_element.less";
+
+@import (reference)"shortcodes/vc_call_to_action3.less";
+@import "shortcodes/vc_cta3_editform.less";
+// Used in deprecated logic in edit form and add element windows
+@import "shortcodes/vc_message_box/vc_message_box_front.less";
+@import "backend_shortcodes/vc_charts.less";
+// edit form for vc_line_chart
+
+.vc_editor {
+  // Fix admin page
+  #adminmenuback {
+    display: none;
+  }
+  #wpbody {
+    padding-top: 10px;
+  }
+  #wpcontent, #wpfooter {
+    margin-left: 0 !important;
+  }
+  #wpcontent {
+    padding-left: 0 !important;
+  }
+  #adminmenuback, #adminmenuwrap {
+    display: none;
+  }
+  #wpbody-content {
+    padding-bottom: 0;
+  }
+  #wpfooter,
+  #local-storage-notice,
+  #setting-error-tgmpa {
+    display: none !important;
+  }
+  // Frame settings
+  #vc_inline-frame-wrapper {
+    position: absolute;
+    width: 100%;
+  }
+  #vc_inline-frame {
+    margin: 0 auto;
+    display: block;
+    position: initial !important;
+  }
+}
+
+
+.vc_wrapper-param-type-textfield,
+.vc_wrapper-param-type-el_id,
+.vc_wrapper-param-type-dropdown {
+
+  .edit_form_line {
+    padding-left: 10px;
+  }
+}
+
+// Sidebar
+.lqd-sidebar-active {
+
+  #vc_inline-frame-wrapper {
+    top: 0 !important;
+    left: var(--lqd-sidebar-width);
+    width: calc(100% - var(--lqd-sidebar-width));
+  }
+  #vc_inline-frame {
+    height: 100vh !important;
+  }
+  .vc_ui-panel {
+    width: var(--lqd-sidebar-width) !important;
+    height: auto !important;
+    max-height: none !important;
+    margin: 0 !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: auto !important;
+
+    > .ui-resizable-handle {
+      display: none !important;
+    }
+  }
+  .vc_add-element-container {
+    max-height: none;
+  }
+  .vc_ui-panel-window-inner {
+    border-radius: 0;
+    box-shadow: 0 3px 55px rgba(#000, 0.05);
+  }
+  .vc_ui-panel-header {
+    
+    .vc_ui-panel-header-heading {
+      padding: 5px 0 0;
+      flex-direction: row-reverse;
+  
+      h3 {
+        margin-right: auto;
+        font-size: 16px;
+      }
+    }
+    .vc_ui-panel-header-controls {
+      min-width: 50px !important;
+      padding-right: 0;
+  
+      .vc_ui-switch_sidebar-button {
+        display: none !important;
+      }
+      .vc_ui-dropdown {
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
+      .vc_ui-dropdown .vc_ui-dropdown-trigger,
+      .vc_ui-control-button {
+        font-size: 20px;
+      }
+      .vc-c-icon-close {
+        font-family: 'Line Awesome Free' !important;
+        font-weight: 900;
+  
+        &:before {
+          content: '\f060';
+        }
+      }
+    }
+  }
+  #vc_ui-panel-templates,
+  #vc_ui-panel-add-element {
+    
+    &:before {
+      content: none;
+    }
+    .vc_ui-panel-content-container {
+      background-color: var(--lqd-bg-popup);
+    }
+    .vc_ui-panel-header-container {
+      padding: 15px 50px 0;
+    }
+    .vc_ui-panel-header-content{
+      display: none;
+    }
+    .vc_ui-panel-header {
+      
+      .vc_ui-panel-header-header {
+        width: 100%;
+        flex-grow: 1;
+      }
+    }
+    .vc_ui-panel-header {
+      background: transparent;
+    }
+  }
+  #vc_ui-panel-add-element {
+    
+    .vc_ui-panel-header-controls {
+      display: none;
+    }
+    .vc_add-element-container {
+      padding: 20px 30px 30px;
+    }
+    .wpb-elements-list {
+
+      &[data-vc-ui-filter="*"] {
+
+        .wpb-content-layouts {
+
+          
+        }
+      }
+      // &:not([data-vc-ui-filter=*]) {
+
+      //   .wpb-content-layouts {
+
+      //     li {
+      //       display: none;
+      //     }
+      //   }
+      // }
+    }
+    .wpb-content-layouts {
+      grid-template-columns: repeat(2,1fr);
+      gap: 20px;
+      font-size: 12px;
+      
+      a {
+        padding: 17px 10px;
+      }
+      > button {
+        display: flex;
+        padding: 10px 0;
+        align-items: center;
+        justify-content: space-between;
+        grid-column: 1 / span 2;
+        background: none;
+        border: none;
+        font-size: 13px;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: var(--lqd-active-txt-popup-label-tab);
+        cursor: pointer;
+
+        &:focus {
+          box-shadow: none;
+          outline: none;
+        }
+        &:after {
+          content: '\ea1a';
+          margin-left: auto;
+          font: normal 1.5em/1 'lqd-essentials';
+        }
+        &.vc_active {
+
+          &:after {
+            content: '\ea1c';
+          }
+        }
+        ~ li:not(.vc_visible) {
+          display: none;
+        }
+      }
+    }
+  }
+  #vc_ui-panel-templates {
+    
+    .vc_ui-panel-header-heading {
+
+      h3 {
+        display: none;
+      }
+    }
+    .vc_ui-panel-header-controls {
+      position: absolute;
+      top: 15px;
+      left: 0;
+    }
+    .liquid-sorting-container {
+      height: 330px;
+      overflow-y: scroll;
+    }
+    .sortable_templates {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+    .liquid-templates-container {
+
+      .vc_ui-template {
+        padding: 15px 5px;
+      }
+    }
+  }
+  #vc_ui-panel-edit-element {
+
+    .vc_ui-panel-footer-container {
+      padding-bottom: 17px;
+    }
+  }
+  .vc_general {
+
+    &.vc_element-icon {
+      font-size: 37px;
+      margin-bottom: 15px;
+    }
+  }
+  .vc_add-element-container {
+
+    .wpb-content-layouts {
+
+      a {
+
+        &:hover {
+          box-shadow: none;
+          transform: none;
+        }
+      }
+    }
+  }
+  
+  .vc_navbar {
+    width: var(--lqd-height-navbar);
+    height: var(--lqd-height-navbar);
+    justify-content: flex-end;
+    border: none;
+    top: auto;
+    left: auto;
+    bottom: 40px;
+    right: 40px;
+    background-color: transparent;
+    box-shadow: none;
+    
+    &:before,
+    &:after {
+      display: inline-flex;
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: 0;
+      border-radius: var(--lqd-height-navbar);
+      width: var(--lqd-height-navbar);
+      height: var(--lqd-height-navbar);
+      align-items: center;
+      justify-content: center;
+    }
+    &:before {
+      content: '';
+      background-color: var(--lqd-sidebaractive-bg-nav);
+      box-shadow: var(--lqd-shadow-popup);
+      transition: width 0.45s var(--expo-out);
+      transform-origin: right;
+    }
+    &:after {
+      content: '\ea44';
+      font: normal 1em/1 'lqd-essentials';
+      opacity: 1;
+      transition: opacity 0.25s var(--expo-out);
+      color: var(--lqd-txt-btn-nav);
+    }
+    li {
+
+      + li {
+
+        a {
+          border: none;
+        }
+      }
+      &.vc_navbar-back {
+
+        a {
+          border-radius: 0 var(--lqd-height-navbar) var(--lqd-height-navbar) 0;
+        }
+      }
+    }
+    .vc_navbar-saveupdate,
+    #vc_add-new-element {
+      display: none;
+    }
+    #vc_pages-editor-button,
+    #vc_templates-editor-button,
+    .vc_icon-btn {
+      padding: 0;
+      min-width: var(--lqd-height-navbar);
+    }
+    #vc_pages-editor-button,
+    #vc_templates-editor-button {
+      font-size: 22px;
+
+      i {
+        margin: 0;
+      }
+      span {
+        display: none;
+      }
+    }
+    #vc_pages-editor-button {
+
+      i:before {
+        content: '\f07b';
+      }
+    }
+    #vc_templates-editor-button {
+
+      i:before {
+        content: '\f15c';
+      }
+    }
+    .vc_dropdown-list {
+      flex-direction: column-reverse;
+      top: auto;
+      bottom: 100%;
+      border-radius: var(--lqd-radius-popup) var(--lqd-radius-popup) 0 0;
+    }
+    .vc_navbar-nav,
+    .vc_navbar-header {
+      position: relative;
+      z-index: 2;
+      pointer-events: none;
+    }
+    .vc_navbar-header,
+    .vc_navbar-nav li {
+      opacity: 0;
+      visibility: hidden;
+      transform: translateX(-5px);
+      transition: transform 0.65s, opacity 0.65s, visibility 0.65s;
+      transition-timing-function: var(--expo-out);
+    }
+    .vc_navbar-header {
+      position: static;
+      opacity: 1;
+      visibility: visible;
+      transform: none;
+      
+      .vc_navbar-brand {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+
+        &.vc_ui-wp-spinner {
+          opacity: 1;
+
+          &:before {
+            width: 25px;
+            height: 25px;
+          }
+        }
+      }
+    }
+
+    &:hover {
+      
+      &:before {
+        width: var(--lqd-sidebaractive-width-navbar);
+      }
+      &:after {
+        opacity: 0;
+      }
+      .vc_navbar-nav,
+      .vc_navbar-header {
+        pointer-events: all;
+      }
+      .vc_navbar-header,
+      .vc_navbar-nav li {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(0);
+      }
+      .vc_navbar-header {
+        position: relative;
+        
+        .vc_navbar-brand {
+          position: relative;
+          top: auto;
+          left: auto;
+          width: 100%;
+          height: 100%;
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+.compose-mode {
+
+  #wpbody-content {
+
+    > .error {
+      display: none;
+    }
+  }
+}
+
+// Vendors
+@import "vendor/contact_form_7.less";
+@import "vendor/gravity_form.less";
+@import "vendor/layerslider.less";
+@import "vendor/rev_slider.less";
+@import "vendor/jwplayer.less";
+
+@import "lib/vc_pointer.less";

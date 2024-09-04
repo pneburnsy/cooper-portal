@@ -1,0 +1,119 @@
+/**
+ * Row styles
+ */
+
+.vc_row {
+
+  &.vc_row-no-padding {
+
+    .vc_column-inner {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+  &[data-vc-full-width] {
+    .transition(opacity 0.5s ease);
+    overflow: hidden; /** Fix overflow **/
+
+    &.vc_hidden {
+      opacity: 0;
+    }
+  }
+}
+
+.vc_inner {
+  margin-inline-start: -15px;
+  margin-inline-end: -15px;
+}
+
+.wpb_wrapper {
+  position: relative;
+}
+
+.vc_row-o-full-height {
+  min-height: 100vh;
+}
+
+.vc_column_container {
+  display: flex;
+
+}
+.vc_column-inner {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  flex-grow: 1;
+  position: relative;
+  // having issue when we have something in column e.g. fancybox 3d
+  // z-index: 1;
+}
+
+// columns alignment
+.vc_row-o-columns-stretch {
+  align-content: stretch;
+}
+.vc_row-o-columns-top {
+  align-content: flex-start;
+}
+.vc_row-o-columns-bottom {
+  align-content: flex-end;
+}
+.vc_row-no-column-align,
+.vc_row-o-columns-middle {
+  align-content: center;
+}
+
+// equal height
+.vc_row-o-equal-height {
+
+  > .vc_column_container {
+    align-items: stretch;
+  }
+}
+
+// content alignment
+.vc_row-o-content-top {
+
+  > .vc_column_container {
+
+    > .vc_column-inner {
+      justify-content: flex-start;
+    }
+  }
+  &:not(.vc_row-o-equal-height) {
+
+    > .vc_column_container {
+      align-items: flex-start;
+    }
+  }
+}
+.vc_row-o-content-bottom {
+
+  > .vc_column_container {
+
+    > .vc_column-inner {
+      justify-content: flex-end;
+    }
+  }
+  &:not(.vc_row-o-equal-height) {
+
+    > .vc_column_container {
+      align-items: flex-end;
+    }
+  }
+}
+.vc_row-o-content-middle {
+
+  > .vc_column_container {
+
+    > .vc_column-inner {
+      justify-content: center;
+    }
+  }
+  &:not(.vc_row-o-equal-height) {
+
+    > .vc_column_container {
+      align-items: center;
+    }
+  }
+}

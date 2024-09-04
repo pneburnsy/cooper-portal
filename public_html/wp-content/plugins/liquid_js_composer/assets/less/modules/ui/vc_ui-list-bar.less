@@ -1,0 +1,53 @@
+// list bar
+.vc_ui-list-bar {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background: var(--lqd-bg-popup-dropdown);
+
+  & + .vc_ui-list-bar {
+    border-top-width: 0;
+  }
+}
+.vc_ui-list-bar-item {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: color 0.3s, background 0.3s;
+
+  &:hover {
+    color: var(--lqd-active-txt-popup-label-tab);
+
+    .vc_ui-list-bar-item-actions {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}
+.vc_ui-list-bar-item-trigger {
+  text-transform: none;
+  color: var(--lqd-txt-popup-label-opt);
+  background: transparent;
+  border: none;
+  text-decoration: none;
+  text-align: left;
+  padding: 10px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  font-weight: 400;
+
+  cursor: pointer;
+  &:hover {
+    background: transparent;
+  }
+}
+.vc_ui-list-bar-item-actions {
+  padding-left: 10px;
+  padding-right: 10px;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.2s;
+}

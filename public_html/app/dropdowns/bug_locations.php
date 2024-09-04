@@ -1,0 +1,15 @@
+<option value="Dashboard">Dashboard</option>
+<option value="File Manager">File Manager</option>
+<option value="Accounts">Accounts</option>
+<option value="Surveys">Surveys</option>
+<option value="Maintenance Contracts">Maintenance Contracts</option>
+<option value="Rental Equipment">Rental Equipment</option>
+<option value="Thorough Examinations">Thorough Examinations</option>
+<option value="Service Contracts">Service Contracts</option>
+<option value="ODO Submissions">ODO Submissions</option>
+<option value="Email Marketing">Email Marketing</option>
+<option value="Holidays">Holidays</option>
+<option value="Applications">Applications</option>
+<option value="User Management">User Management</option>
+<option value="Admin Settings">Admin Settings</option>
+<option value="Other">Other</option>

@@ -1,0 +1,182 @@
+@import "vc_ui-panel/vc_ui-panel-content.less";
+@import "vc_ui-list-bar.less";
+
+@vcui-template-list-border: #e2e2e2;
+@vcui-template-list-background: #f9f9f9;
+@vcui-template-list-trigger-color: #5e5e5e;
+@vcui-template-list-trigger-color-hover: #23282d;
+
+.vc_ui-template-list {
+  
+  &.vc_ui-list-bar {
+    border: none;
+    background: transparent;
+  }
+
+  .vc_ui-list-bar-item-actions {
+    font-size: 18px;
+
+    button {
+
+      + button {
+        margin-left: 10px;
+      }
+      i {
+        display: flex;
+      }
+    }
+    .vc-c-icon-add {
+      font: normal 1em/1 'lqd-essentials' !important;
+
+      &:before {
+        content: "\ea41";
+      }
+      &.vc_ui-wp-spinner {
+
+        &:before {
+          content: "\ea42";
+        }
+      }
+    }
+  }
+  .vc_ui-list-bar-item {
+    border-top: 1px solid @vcui-template-list-border;
+    border-bottom: 1px solid @vcui-template-list-border;
+    position: relative;
+    color: var(--var-txt-template-item-title);
+
+    &:hover {
+      background-color: @vcui-template-list-background;
+    }
+  }
+
+  .vc_ui-control-button {
+    padding-left: .2em;
+    padding-right: .2em;
+
+    .vc_ui-wp-spinner {
+      margin: 0;
+      height: 16px;
+      width: 16px;
+      &::before {
+        &:extend(.vc_ui-wp-spinner::before);
+      }
+    }
+  }
+
+  .vc_active,
+  .vc_loading {
+    
+    .vc_ui-list-bar-item {
+      background-color: @vcui-template-list-background;
+    }
+    .vc_ui-list-bar-item-actions {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+
+  .vc_ui-list-bar-item-trigger {
+    font-weight: 600;
+    outline: none;
+    transition: color 0.2s;
+    color: var(--lqd-txt-template-item-title);
+  }
+
+  .vc_ui-template {
+
+    &:not(:last-child) {
+      margin-bottom: -1px;
+    }
+    &:last-child:not(.vc_active) {
+      border-bottom: none;
+    }
+  }
+
+  .vc_template-save-btn {
+    min-width: 150px;
+  }
+
+  .vc_ui-template-content {
+    box-sizing: content-box;
+    display: none;
+    overflow: hidden;
+    transition: height 0.2s, padding 0.2s;
+    padding: 0;
+  }
+  .vc_active,
+  .vc_animating {
+
+    .vc_ui-template-content {
+      display: block;
+    }
+  }
+
+  .vc_active {
+
+    .vc-c-icon-arrow_drop_down {
+
+      &:extend(.vc-c-icon-arrow_drop_up all);
+    }
+  }
+}
+
+.vc_ui-panel-window.vc_templates-panel {
+  width: 80vw;
+  height: 85vh;
+  // hide preview icon on mobile devices
+
+  &:not(.vc_media-sm) {
+
+    .vc_ui-control-button[data-vc-preview-handler] {
+      display: none;
+    }
+    .vc_active,
+    .vc_animating {
+
+      .vc_ui-template-content {
+        display: none;
+      }
+    }
+  }
+  h3 {
+    margin-bottom: 0.5em;
+  }
+}
+
+.vc_ui-panel {
+
+  .vc_panel-tabs {
+
+    [data-vc-panel-message] {
+      display: none !important;
+      width: 100%;
+      margin-bottom: 10px;
+
+      .vc_message_box {
+        padding: 0em 1em 1em 4em;
+      }
+    }
+  }
+}
+
+// todo: remove this nasty important @todo 4.10
+[data-vc-template-search="true"] {
+
+  .vc_edit-form-tab {
+    display: flex !important;
+    
+    &.vc-search-result-empty {
+      display: none !important;
+    }
+    [data-vc-hide-on-search="true"] {
+      display: none;
+    }
+    .vc_ui-template-list.vc_ui-list-bar {
+      margin-bottom: 0;
+    }
+  }
+  .vc_ui-panel-content{
+    padding-bottom: 0;
+  }
+}

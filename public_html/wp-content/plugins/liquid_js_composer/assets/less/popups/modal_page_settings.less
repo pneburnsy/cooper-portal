@@ -1,0 +1,23 @@
+.ace-chrome {
+	background-color: var(--lqd-bg-responsive-params);
+	color: var(--lqd-txt-responsive-params);
+
+	.ace_gutter {
+		background: var(--lqd-outline-css-editor-inputs);
+		color: var(--lqd-txt-responsive-params);
+	}
+	.ace_gutter-active-line {
+		background: var(--lqd-bg-responsive-params);
+	}
+	.ace_fold-widget {
+		background-size: 10px;
+		
+		&,
+		&.ace_closed {
+			background-image: var(--lqd-url-arrow-down);
+		}
+		&.ace_closed {
+			transform: rotate(-90deg);
+		}
+	}
+}

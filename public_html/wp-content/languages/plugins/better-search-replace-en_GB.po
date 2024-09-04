@@ -1,0 +1,154 @@
+# Translation of Plugins - Better Search Replace - Stable (latest release) in English (UK)
+# This file is distributed under the same license as the Plugins - Better Search Replace - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2023-01-11 17:43:00+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/4.0.0-alpha.3\n"
+"Language: en_GB\n"
+"Project-Id-Version: Plugins - Better Search Replace - Stable (latest release)\n"
+
+#. Plugin URI of the plugin
+#. Author URI of the plugin
+msgid "https://bettersearchreplace.com"
+msgstr "https://bettersearchreplace.com"
+
+#: includes/class-bsr-admin.php:235
+msgid " seconds"
+msgstr " seconds"
+
+#: includes/class-bsr-ajax.php:157
+msgid "Processing table %d of %d: %s"
+msgstr "Processing table %d of %d: %s"
+
+#: includes/class-bsr-admin.php:75
+msgid "Processing..."
+msgstr "Processing..."
+
+#. Description of the plugin
+msgid "A small plugin for running a search/replace on your WordPress database."
+msgstr "A small plugin for running a search/replace on your WordPress database."
+
+#: templates/bsr-settings.php:39
+msgid "Max Page Size"
+msgstr "Max Page Size"
+
+#: templates/bsr-search-replace.php:118
+msgid "Run Search/Replace"
+msgstr "Run Search/Replace"
+
+#: templates/bsr-search-replace.php:107
+msgid "If checked, no changes will be made to the database, allowing you to check the results beforehand."
+msgstr "If checked, no changes will be made to the database, allowing you to check the results beforehand."
+
+#: templates/bsr-search-replace.php:106
+msgid "Run as dry run"
+msgstr "Run as dry run"
+
+#: templates/bsr-search-replace.php:96
+msgid "If left unchecked, all database columns titled 'guid' will be skipped."
+msgstr "If left unchecked, all database columns titled 'guid' will be skipped."
+
+#: templates/bsr-search-replace.php:85
+msgid "Searches are case-sensitive by default."
+msgstr "Searches are case-sensitive by default."
+
+#: templates/bsr-search-replace.php:84
+msgid "Case-Insensitive"
+msgstr "Case-Insensitive"
+
+#: templates/bsr-search-replace.php:61
+msgid "Select multiple tables with Ctrl-Click for Windows or Cmd-Click for Mac."
+msgstr "Select multiple tables with Ctrl-Click for Windows or Cmd-Click for Mac."
+
+#: templates/bsr-search-replace.php:59
+msgid "Select tables"
+msgstr "Select tables"
+
+#: templates/bsr-search-replace.php:51
+msgid "Replace with"
+msgstr "Replace with"
+
+#: templates/bsr-search-replace.php:46
+msgid "Search for"
+msgstr "Search for"
+
+#: templates/bsr-help.php:51
+msgid "Found a bug or have a feature request? Please submit an issue on <a href=\"%s\">GitHub</a>!"
+msgstr "Found a bug or have a feature request? Please submit an issue on <a href=\"%s\">GitHub</a>!"
+
+#: templates/bsr-help.php:35
+msgid "Free support is available on the <a href=\"%s\">plugin support forums</a>."
+msgstr "Free support is available on the <a href=\"%s\">plugin support forums</a>."
+
+#: templates/bsr-help.php:26
+msgid "Help & Troubleshooting"
+msgstr "Help & Troubleshooting"
+
+#: templates/bsr-dashboard.php:67
+msgid "Help"
+msgstr "Help"
+
+#: templates/bsr-dashboard.php:66 templates/bsr-settings.php:30
+msgid "Settings"
+msgstr "Settings"
+
+#: templates/bsr-dashboard.php:65 templates/bsr-search-replace.php:32
+msgid "Search/Replace"
+msgstr "Search/Replace"
+
+#: includes/class-bsr-db.php:295
+msgid "Error updating row: %d."
+msgstr "Error updating row: %d."
+
+#: includes/class-bsr-db.php:85
+msgid "(%s MB)"
+msgstr "(%s MB)"
+
+#: includes/class-bsr-admin.php:285
+msgid "Upgrade to Pro"
+msgstr "Upgrade to Pro"
+
+#: includes/class-bsr-admin.php:213
+msgid "Time"
+msgstr "Time"
+
+#: includes/class-bsr-admin.php:213
+msgid "Rows Updated"
+msgstr "Rows Updated"
+
+#: includes/class-bsr-admin.php:213
+msgid "Changes Found"
+msgstr "Changes Found"
+
+#: includes/class-bsr-admin.php:213
+msgid "Table"
+msgstr "Table"
+
+#: includes/class-bsr-admin.php:115
+msgid "<p>During the search/replace, <strong>%d</strong> tables were searched, with <strong>%d</strong> cells changed in <strong>%d</strong> updates.</p><p><a href=\"%s\" class=\"thickbox\" title=\"Search/Replace Details\">Click here</a> for more details.</p>"
+msgstr "<p>During the search/replace, <strong>%d</strong> tables were searched, with <strong>%d</strong> cells changed in <strong>%d</strong> updates.</p><p><a href=\"%s\" class=\"thickbox\">Click here</a> for more details.</p>"
+
+#: includes/class-bsr-admin.php:108
+msgid "<p><strong>DRY RUN:</strong> <strong>%d</strong> tables were searched, <strong>%d</strong> cells were found that need to be updated, and <strong>%d</strong> changes were made.</p><p><a href=\"%s\" class=\"thickbox\" title=\"Dry Run Details\">Click here</a> for more details, or use the form below to run the search/replace.</p>"
+msgstr "<p><strong>DRY RUN:</strong> <strong>%d</strong> tables were searched, <strong>%d</strong> cells were found that need to be updated, and <strong>%d</strong> changes were made.</p><p><a href=\"%s\" class=\"thickbox\" title=\"Dry Run Details\">Click here</a> for more details, or use the form below to run the search/replace.</p>"
+
+#. Plugin Name of the plugin
+#: includes/class-bsr-admin.php:87
+msgid "Better Search Replace"
+msgstr "Better Search Replace"
+
+#: includes/class-bsr-admin.php:74
+msgid "An error occurred processing your request. Try decreasing the \"Max Page Size\", or contact support."
+msgstr "An error occurred processing your request. Try decreasing the \"Max Page Size\", or contact support."
+
+#: includes/class-bsr-admin.php:73
+msgid "Please select the tables that you want to update."
+msgstr "Please select the tables that you want to update."
+
+#: includes/class-bsr-admin.php:72
+msgid "No search string was defined, please enter a URL or string to search for."
+msgstr "No search string was defined, please enter a URL or string to search for."
