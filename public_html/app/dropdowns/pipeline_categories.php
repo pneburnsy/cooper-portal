@@ -1,0 +1,16 @@
+<option value="SANY">SANY</option>
+<option value="Mantsinen">Mantsinen</option>
+<option value="Movella">Movella</option>
+<option value="Sve Truck">Sve Truck</option>
+<option value="TEC Container">TEC Container</option>
+<option value="RAM Spreader">RAM Spreader</option>
+<option value="Kone Cranes">Kone Cranes</option>
+<option value="Telestack">Telestack</option>
+<option value="Nilfisk">Nilfisk</option>
+<option value="Maximal">Maximal</option>
+<option value="SMV">SMV</option>
+<option value="Genie">Genie</option>
+<option value="STILL">STILL</option>
+<option value="MAFI">MAFI</option>
+<option value="Linde">Linde</option>
+<option value="Other">Other</option>

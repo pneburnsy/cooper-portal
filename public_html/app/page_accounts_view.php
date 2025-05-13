@@ -127,14 +127,35 @@ if (!$accounts_team_view[0]->displayid) {
             <ul class="nav nav-tabs-custom card-header-tabs border-top mt-4" id="pills-tab" role="tablist">
                 <?php if (doif_cooperonly_query()) { ?>
                     <li class="nav-item account-icon">
-                        <a class="nav-link px-3 <?php if ($_GET['tab'] == 'account_user') { echo 'active'; } ?>" data-bs-toggle="tab" href="#user" role="tab">
+                        <a class="nav-link px-3 <?php if (!$_GET['tab']) { echo 'active'; } ?>" data-bs-toggle="tab" href="#user" role="tab">
                             <i data-feather="user"></i>Contacts (<?= accounts_team_users_count( $_GET['displayid'], false ); ?>)
+                        </a>
+                    </li>
+                <?php } ?>
+                <?php if (doif_cooperadminonly_query('pipeline_1')) { ?>
+                    <li class="nav-item account-icon">
+                        <a class="nav-link px-3" href="/app/page_pipeline.php?pipeline_id=1&account=<?= $accounts_team_view[0]->displayid ?>">
+                            <i data-feather="book"></i>Specialised Pipeline
+                        </a>
+                    </li>
+                <?php } ?>
+                <?php if (doif_cooperadminonly_query('pipeline_2')) { ?>
+                    <li class="nav-item account-icon">
+                        <a class="nav-link px-3" href="/app/page_pipeline.php?pipeline_id=2&account=<?= $accounts_team_view[0]->displayid ?>">
+                            <i data-feather="book"></i>Solutions Pipeline
+                        </a>
+                    </li>
+                <?php } ?>
+                <?php if (doif_cooperadminonly_query('pipeline_3')) { ?>
+                    <li class="nav-item account-icon">
+                        <a class="nav-link px-3" href="/app/page_pipeline.php?pipeline_id=3&account=<?= $accounts_team_view[0]->displayid ?>">
+                            <i data-feather="book"></i>Rentals Pipeline
                         </a>
                     </li>
                 <?php } ?>
                 <?php if (doif_cooperonly_query()) { ?>
                     <li class="nav-item account-icon">
-                        <a class="nav-link px-3 <?php if (!$_GET['tab']) { echo 'active'; } ?>" data-bs-toggle="tab" href="#overview" role="tab">
+                        <a class="nav-link px-3 <?php if ($_GET['tab'] == 'account_survey') { echo 'active'; } ?>" data-bs-toggle="tab" href="#overview" role="tab">
                             <i data-feather="check-square"></i>Surveys (<?= accounts_team_survey_count( $_GET['displayid'], false ); ?>)
                         </a>
                     </li>

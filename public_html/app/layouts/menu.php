@@ -78,6 +78,12 @@ z<header id="page-topbar" class="<?= whitelabel_single(false) ?>">
                 </button>
                 <div class="dropdown-menu dropdown-menu-end profile-menu">
                     <a class="dropdown-item" href="/app/profile.php"><i data-feather="edit" style="width:16px;margin-right:4px;"></i> Your Profile</a>
+                    <?php if (doif_cooperadminonly_query('contacts')) { ?>
+                        <a class="dropdown-item" href="/app/page_contact_reminder.php?date=<?= date('d-m-Y')?>"><i data-feather="calendar" style="width:16px;margin-right:4px;"></i> Your Calendar</a>
+                    <?php } ?>
+                    <?php if (doif_cooperadminonly_query('contacts') && current_user_can( 'administrator' )) { ?>
+                        <a class="dropdown-item" href="/app/page_contact_reminder.php?date=<?= date('d-m-Y')?>&user=all"><i data-feather="calendar" style="width:16px;margin-right:4px;"></i> Team Calendar</a>
+                    <?php } ?>
                     <a class="dropdown-item" href="/app/profile.php?tab=yoursettings"><i data-feather="user" style="width:16px;margin-right:4px;"></i> Your Settings</a>
                     <a class="dropdown-item" href="<?= wp_logout_url() ?>"><i data-feather="log-out" style="width:16px;margin-right:4px;"></i> Logout</a>
                 </div>
@@ -112,39 +118,27 @@ z<header id="page-topbar" class="<?= whitelabel_single(false) ?>">
                     <li class="menu-title" data-key="t-menu">Employee Tools</li>
                 <?php } ?>
 
-                <?php if (doif_cooperadminonly_query('contacts') && !doif_cooperadminonly_query('contacts_travel')) { ?>
+                <?php if (doif_cooperadminonly_query('contacts') || doif_cooperadminonly_query('contacts_travel')) { ?>
                     <li>
-                        <a href="/app/page_view_users.php">
+                        <a href="javascript: void(0);" class="has-arrow">
                             <i data-feather="user"></i>
                             <span data-key="t-contacts">Contacts</span>
                         </a>
-                    </li>
-                <?php } ?>
-                <?php if (!doif_cooperadminonly_query('contacts') && doif_cooperadminonly_query('contacts_travel')) { ?>
-                    <li>
-                        <a href="/app/page_view_users_travel.php">
-                            <i data-feather="map"></i>
-                            <span data-key="t-map">Contacts Locations</span>
-                        </a>
-                    </li>
-                <?php } ?>
-                <?php if (doif_cooperadminonly_query('contacts') && doif_cooperadminonly_query('contacts_travel')) { ?>
-                    <li>
-                        <a href="javascript: void(0);" class="has-arrow">
-                            <i data-feather="grid"></i>
-                            <span data-key="t-contacts">Contacts</span>
-                        </a>
                         <ul class="sub-menu" aria-expanded="false">
+                            <?php if (doif_cooperadminonly_query('contacts')) { ?>
                             <li>
                                 <a href="/app/page_view_users.php">
                                     <span data-key="t-contacts">All Contacts</span>
                                 </a>
                             </li>
+                            <?php } ?>
+                            <?php if (doif_cooperadminonly_query('contacts_travel')) { ?>
                             <li>
                                 <a href="/app/page_view_users_travel.php">
                                     <span data-key="t-map">Contacts Locations</span>
                                 </a>
                             </li>
+                            <?php } ?>
                         </ul>
                     </li>
                 <?php } ?>
@@ -152,7 +146,7 @@ z<header id="page-topbar" class="<?= whitelabel_single(false) ?>">
                 <?php if (doif_cooperadminonly_query('accounts')) { ?>
                     <li>
                         <a href="/app/page_accounts.php">
-                            <i data-feather="home"></i>
+                            <i data-feather="grid"></i>
                             <span data-key="t-accounts">Accounts</span>
                         </a>
                     </li>
@@ -166,6 +160,38 @@ z<header id="page-topbar" class="<?= whitelabel_single(false) ?>">
                             </a>
                         </li>
                     <?php } ?>
+                <?php } ?>
+
+                <?php if (doif_cooperadminonly_query('pipeline_1') || doif_cooperadminonly_query('pipeline_2') || doif_cooperadminonly_query('pipeline_3')) { ?>
+                    <li>
+                        <a href="javascript: void(0);" class="has-arrow">
+                            <i data-feather="book"></i>
+                            <span data-key="t-pipeline">Pipeline</span>
+                        </a>
+                        <ul class="sub-menu" aria-expanded="false">
+                            <?php if (doif_cooperadminonly_query('pipeline_1')) { ?>
+                                <li>
+                                    <a href="/app/page_pipeline.php?pipeline_id=1">
+                                        <span data-key="t-pipeline-specialised">Specialised</span>
+                                    </a>
+                                </li>
+                            <?php } ?>
+                            <?php if (doif_cooperadminonly_query('pipeline_2')) { ?>
+                                <li>
+                                    <a href="/app/page_pipeline.php?pipeline_id=2">
+                                        <span data-key="t-pipeline-solutions">Solutions</span>
+                                    </a>
+                                </li>
+                            <?php } ?>
+                            <?php if (doif_cooperadminonly_query('pipeline_3')) { ?>
+                                <li>
+                                    <a href="/app/page_pipeline.php?pipeline_id=3">
+                                        <span data-key="t-pipeline-rentals">Rentals</span>
+                                    </a>
+                                </li>
+                            <?php } ?>
+                        </ul>
+                    </li>
                 <?php } ?>
 
                 <?php if (doif_cooperonly_query()) { ?>
@@ -198,7 +224,7 @@ z<header id="page-topbar" class="<?= whitelabel_single(false) ?>">
                         ?>
                         <li>
                             <a href="/app/page_rental_equipment.php">
-                                <i data-feather="calendar"></i>
+                                <i data-feather="list"></i>
                                 <span data-key="t-rental">Rental Equipment</span>
                                 <span class="badge rounded-pill bg-soft-danger text-danger float-end <?php if (!$rentals_overdue_count[0]->total) { echo 'complete'; } else { echo 'uncomplete'; }?>"><?php if ($rentals_overdue_count[0]->total) { echo $rentals_overdue_count[0]->total; } else { echo '✔'; } ?></span>
                             </a>
@@ -211,7 +237,7 @@ z<header id="page-topbar" class="<?= whitelabel_single(false) ?>">
                         ?>
                         <li>
                             <a href="/app/page_thorough_examinations.php">
-                                <i data-feather="tool"></i>
+                                <i data-feather="list"></i>
                                 <span data-key="t-examinations">Thorough Examinations</span>
                                 <span class="badge rounded-pill bg-soft-danger text-danger float-end <?php if (!$exam_overdue_count[0]->total) { echo 'complete'; } else { echo 'uncomplete'; }?>"><?php if ($exam_overdue_count[0]->total) { echo $exam_overdue_count[0]->total; } else { echo '✔'; } ?></span>
                             </a>
@@ -224,7 +250,7 @@ z<header id="page-topbar" class="<?= whitelabel_single(false) ?>">
                         ?>
                         <li>
                             <a href="/app/page_service_contract.php">
-                                <i data-feather="book"></i>
+                                <i data-feather="list"></i>
                                 <span data-key="t-service">Service Planner</span>
                                 <span class="badge rounded-pill bg-soft-danger text-danger float-end <?php if (!$service_overdue_count[0]->total) { echo 'complete'; } else { echo 'uncomplete'; }?>"><?php if ($service_overdue_count[0]->total) { echo $service_overdue_count[0]->total; } else { echo '✔'; } ?></span>
                             </a>

@@ -85,7 +85,7 @@ File: Main Js File
                 toggleWeather();
             });
 
-            if (window.innerWidth >= 1024 && window.innerWidth <= 1366) {
+            if (window.innerWidth >= 1024 && window.innerWidth <= 1024) { // TLH BUG FIX - 27/11/2024, VALUE WAS 1366
                 document.body.setAttribute('data-sidebar-size', 'sm');
                 updateRadio('sidebar-size-small')
             }

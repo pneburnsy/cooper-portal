@@ -9,14 +9,14 @@ function accounts_table($variable) { ?>
                 <th scope="col">Email</th>
                 <th scope="col">Fleet Manager</th>
                 <th scope="col">Website</th>
+                <th scope="col set-width">Contacts</th>
                 <th scope="col set-width">Surveys</th>
                 <th scope="col set-width">Maintenance</th>
-                <th scope="col set-width">Rentals</th>
+                <th scope="col set-width">Rental</th>
                 <th scope="col set-width">Examinations</th>
                 <?php if ( current_user_can( 'administrator' ) ) { ?>
-                    <th scope="col set-width">Service Contracts</th>
+                    <th scope="col set-width">Service Planner</th>
                 <?php } ?>
-                <th scope="col set-width">Users</th>
                 <th scope="col">Creation Date</th>
                 <th class="hide-sorting form_actions">Actions</th>
             </tr>
@@ -64,7 +64,14 @@ function accounts_table($variable) { ?>
                             <a href="page_accounts_view.php?tab=accounts_settings&displayid=<?= $variable[$i]->displayid; ?>" class="placeholder">Add Website +</a>
                         <?php } ?>
                     </td>
-                    
+
+
+                    <td>
+                        <span class="<?php if (accounts_team_users_count($variable[$i]->displayid) == 0) { echo 'no_'; } ?>contacts">
+                            <?php echo accounts_team_users_count($variable[$i]->displayid); ?>
+                        </span>
+                    </td>
+
                     <td>
                         <span class="<?php if (accounts_team_survey_count($variable[$i]->displayid, false) == 0) { echo 'no_'; } ?>contacts">
                             <?php echo accounts_team_survey_count($variable[$i]->displayid, false); ?>
@@ -96,12 +103,6 @@ function accounts_table($variable) { ?>
                             </span>
                         </td>
                     <?php } ?>
-
-                    <td>
-                        <span class="<?php if (accounts_team_users_count($variable[$i]->displayid) == 0) { echo 'no_'; } ?>contacts">
-                            <?php echo accounts_team_users_count($variable[$i]->displayid); ?>
-                        </span>
-                    </td>
 
                     <td class="form_name creation_date">
                         <span><?= formatted_date_time($variable[$i]->accountcreated); ?></span>

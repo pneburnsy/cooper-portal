@@ -28,6 +28,7 @@ include 'database/query_presets.php';
 include 'tables/accounts_table.php';
 include 'tables/survey_table.php';
 include 'tables/user_table.php';
+include 'tables/pipeline_table.php';
 include 'tables/maintenance_table.php';
 include 'tables/rentals_table.php';
 include 'tables/rentals_history_table.php';

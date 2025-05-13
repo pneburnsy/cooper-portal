@@ -38,9 +38,13 @@ $adminoptions = $wpdb->get_results("SELECT * FROM $admin_table WHERE uid = 1");
                             <input name="adminemail" maxlength="60" type="email" class="modal_input last-list" id="adminemail" placeholder="Admins Email Address..." value="<?= $adminoptions[0]->adminemail; ?>">
                         </div>
                         <div class="form-block">
-                            <h5 class="modal_label">Portal Admin Reminders</h5>
-                            <label name="portaladminemail" class="d-inline-block" style="margin-right:10px !important;width:fit-content;">Email all admin emails once a week with a status of all outstanding items.</label>
+                            <h5 class="modal_label">Admin(s) Reminders</h5>
+
+                            <label class="modal_label mt-2">Service ODO Reminder Overview</label>
                             <input name="portaladminemail" type="email" multiple class="modal_input last-list" id="portaladminemail" placeholder="info@cooperhandling.com" value="<?= $adminoptions[0]->portaladminemail; ?>">
+
+                            <label class="modal_label mt-2">Employee Reminders Due Overview</label>
+                            <input name="portaladminemployee" type="email" multiple class="modal_input last-list" id="portaladminemployee" placeholder="info@cooperhandling.com" value="<?= $adminoptions[0]->portaladminemployee; ?>">
                         </div>
                         <div class="form-block">
                             <h5 class="modal_label">Portal Message</h5>
@@ -68,6 +72,39 @@ $adminoptions = $wpdb->get_results("SELECT * FROM $admin_table WHERE uid = 1");
             </div>
         </div>
     </div>
+
+    <?php
+//    function update_user_geo_data() {
+//        $users = get_users();
+//
+//        foreach ($users as $user) {
+//            $user_id = $user->ID;
+//            $postcode = get_user_meta($user_id, 'address_postcode', true);
+//            $existing_geo = get_user_meta($user_id, 'geo', true);
+//
+//            // Skip users who already have a 'geo' meta value
+//            if (!empty($postcode) && empty($existing_geo)) {
+//                $cleaned_postcode = str_replace(' ', '', trim($postcode));
+//                $api_url = "https://geocode.maps.co/search?q=" . urlencode($cleaned_postcode) . "&api_key=66d5a1c87be7d126152923dop72193d";
+//                $response = wp_remote_get($api_url);
+//
+//                if (!is_wp_error($response)) {
+//                    $body = wp_remote_retrieve_body($response);
+//                    $data = json_decode($body, true);
+//
+//                    if (!empty($data) && isset($data[0]['lat']) && isset($data[0]['lon'])) {
+//                        $latitude = $data[0]['lat'];
+//                        $longitude = $data[0]['lon'];
+//
+//                        $geo = array('lat' => $latitude, 'lon' => $longitude);
+//                        update_user_meta($user_id, 'geo', $geo);
+//                    }
+//                }
+//            }
+//        }
+//    }
+//    update_user_geo_data();
+    ?>
 
 <?php } ?>
 

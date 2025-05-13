@@ -19,7 +19,8 @@ $table_name = array(
     service_hours => $prefix . 'service_hours',
     notes => $prefix . 'notes',
     permissions => $prefix . 'permissions',
-    regions => $prefix . 'regions'
+    regions => $prefix . 'regions',
+    pipeline => $prefix . 'pipeline'
 );
 
 /* ---- END - GLOBAL DATABASE NAMES ---- */
@@ -90,6 +91,14 @@ include 'contacts/contacts_add.php';
 include 'contacts/contacts_view.php';
 include 'contacts/contacts_edit.php';
 include 'contacts/contacts_status.php';
+
+// PIPELINE
+include 'pipeline/pipeline_all.php';
+include 'pipeline/pipeline_view.php';
+include 'pipeline/pipeline_edit.php';
+include 'pipeline/pipeline_move.php';
+include 'pipeline/pipeline_add.php';
+include 'pipeline/pipeline_delete.php';
 
 // PERMISSIONS
 include 'permissions/permissions_edit.php';
@@ -171,6 +180,7 @@ include 'service/widgets/service_count.php';
 // ADMIN
 include 'admin/admin_edit.php';
 include 'admin/admin_all_users.php';
+include 'admin/admin_travel.php';
 
 // OVERDUE COUNTS
 include 'overdue/overdue_menu.php';
@@ -185,5 +195,7 @@ include 'notes/notes_week.php';
 include 'notes/notes_view.php';
 include 'notes/notes_add.php';
 include 'notes/notes_delete.php';
+include 'notes/notes_complete.php';
+include 'notes/notes_weekly_select.php';
 
 /* ---- END - GLOBAL DATABASE QUERIES ---- */

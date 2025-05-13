@@ -13,7 +13,7 @@ function notes_view($print) {
     global $notes_view;
     $notes_view = $wpdb->get_results($wpdb->prepare("
         SELECT * FROM `$table` 
-        WHERE displayid = %s AND status = 0 ORDER BY `creation_date` DESC
+        WHERE displayid = %s AND status IN (0, 1)  ORDER BY `creation_date` DESC
     ",
         // ARGUMENTS
         $displayid

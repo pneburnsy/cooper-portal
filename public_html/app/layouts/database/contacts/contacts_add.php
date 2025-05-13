@@ -69,7 +69,7 @@ function contacts_add($print) {
         }
         if (!is_wp_error($user_id)) {
             update_user_meta($user_id, 'user_active', safestring($active));
-            update_user_meta($user_id, 'title', get_current_user_id());
+            update_user_meta($user_id, 'title', safestring($_POST['contacts_title']));
             update_user_meta($user_id, 'region', safestring($_POST['contacts_region']));
             update_user_meta($user_id, 'createdby', get_current_user_id());
             update_user_meta($user_id, 'displayid', safestring($displayid));
@@ -77,17 +77,22 @@ function contacts_add($print) {
             update_user_meta($user_id, 'mobile_phone', safestring($_POST['contacts_mobile_phone']));
             update_user_meta($user_id, 'office_phone', safestring($_POST['contacts_office_phone']));
             update_user_meta($user_id, 'address_street', safestring($_POST['address_street']));
+            update_user_meta($user_id, 'address_street_2', safestring($_POST['address_street_2']));
             update_user_meta($user_id, 'address_city', safestring($_POST['address_city']));
             update_user_meta($user_id, 'address_postcode', safestring($_POST['address_postcode']));
+            update_user_meta($user_id, 'address_country', safestring($_POST['address_country']));
         }
 
         // GEO CODE
-        $postcode = safestring($_POST['contacts_postcode']);
-        $api_url = "https://geocode.maps.co/search?q=" . urlencode($postcode) . "&api_key=66d5a1c87be7d126152923dop72193d";
+        $postcode = safestring($_POST['address_postcode']);
+        $cleaned_postcode = str_replace(' ', '', trim($postcode));
+        $api_url = "https://geocode.maps.co/search?q=" . urlencode($cleaned_postcode) . "&api_key=66d5a1c87be7d126152923dop72193d";
 
         $response = wp_remote_get($api_url);
 
         if (is_wp_error($response)) {
+            $latitude = '';
+            $longitude = '';
             echo 'Error retrieving geolocation data: ' . $response->get_error_message();
         } else {
             $body = wp_remote_retrieve_body($response);
@@ -99,6 +104,8 @@ function contacts_add($print) {
                 $geo = array('lat' => $latitude, 'lon' => $longitude);
 
                 update_user_meta($user_id, 'geo', $geo);
+            } else {
+                update_user_meta($user_id, 'geo', '');
             }
         }
 

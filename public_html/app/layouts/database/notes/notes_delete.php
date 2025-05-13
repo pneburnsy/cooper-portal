@@ -6,7 +6,7 @@ function notes_delete($print){
         $table = $table_name['notes'];
         // ------ POST/GET (SANITIZE) ------
         $data = array(
-            'status' => safeinteger(1),
+            'status' => safeinteger(2),
             'status_date' => date('Y-m-d H:i:s'),
         );
         $where = array(

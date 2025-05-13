@@ -16,10 +16,13 @@ doif_cooperadminonly(true, 'contacts');
 
 contacts_view(false);
 contacts_edit(false);
+
 notes_view(false);
 notes_add(false);
 notes_reminder_add(false);
 notes_delete(false);
+notes_complete(false);
+
 permission_edit(false);
 permission_regions_edit(false);
 permissions_all(false);
@@ -80,10 +83,12 @@ if (!$contacts_view['user_meta']['displayid'][0]) {
 
                                     <?php
                                     $street = $contacts_view['user_meta']['address_street'][0] ?? '';
+                                    $street_2 = $contacts_view['user_meta']['address_street_2'][0] ?? '';
                                     $city = $contacts_view['user_meta']['address_city'][0] ?? '';
                                     $postcode = $contacts_view['user_meta']['address_postcode'][0] ?? '';
+                                    $country = $contacts_view['user_meta']['address_country'][0] ?? '';
 
-                                    $address_parts = array_filter([$street, $city, $postcode]);
+                                    $address_parts = array_filter([$street, $street_2, $city, $postcode, $country]);
                                     $full_address = implode(', ', $address_parts);
 
                                     $geo_data = unserialize($contacts_view['user_meta']['geo'][0] );
@@ -92,7 +97,7 @@ if (!$contacts_view['user_meta']['displayid'][0]) {
                                     $longitude = $geo_data['lon'];
 
                                     if (!empty($full_address)) {
-                                        $maps_url = "https://www.google.com/maps/search/$street,+$city,+$postcode/";
+                                        $maps_url = "https://www.google.com/maps/search/$street,+$street_2,+$city,+$postcode,+$country/";
                                         echo "<div class='d-block text-dark'><strong>Address: </strong> <a class='text-dark' href='{$maps_url}' target='_blank'>{$full_address} ($latitude $longitude)</a></div>";
                                     } else {
                                         echo '<div class="d-block text-dark"><strong>Address: </strong> <span>No Address</span></div>';
@@ -149,6 +154,39 @@ if (!$contacts_view['user_meta']['displayid'][0]) {
                         <i data-feather="eye"></i>Overview
                     </a>
                 </li>
+                <li class="nav-item account-icon">
+                    <a class="nav-link px-3 <?php if ($_GET['tab'] == 'contacts_locations') { echo 'active'; } ?>" data-bs-toggle="tab" href="#contacts_locations" role="tab">
+                        <i data-feather="map"></i>Location
+                    </a>
+                </li>
+                <?php if (doif_coopereditoronly_query()) { ?>
+                <li class="nav-item account-icon">
+                    <a class="nav-link px-3 <?php if ($_GET['tab'] == 'contacts_files') { echo 'active'; } ?>" data-bs-toggle="tab" href="#contacts_files" role="tab">
+                        <i data-feather="file"></i>Sales Files
+                    </a>
+                </li>
+                <?php } ?>
+                <?php if (doif_cooperadminonly_query('pipeline_1')) { ?>
+                    <li class="nav-item account-icon">
+                        <a class="nav-link px-3" href="/app/page_pipeline.php?pipeline_id=1&account=<?= $contacts_view['user_meta']['account'][0] ?>">
+                            <i data-feather="book"></i>Specialised Pipeline
+                        </a>
+                    </li>
+                <?php } ?>
+                <?php if (doif_cooperadminonly_query('pipeline_2')) { ?>
+                    <li class="nav-item account-icon">
+                        <a class="nav-link px-3" href="/app/page_pipeline.php?pipeline_id=2&account=<?= $contacts_view['user_meta']['account'][0] ?>">
+                            <i data-feather="book"></i>Solutions Pipeline
+                        </a>
+                    </li>
+                <?php } ?>
+                <?php if (doif_cooperadminonly_query('pipeline_3')) { ?>
+                    <li class="nav-item account-icon">
+                        <a class="nav-link px-3" href="/app/page_pipeline.php?pipeline_id=3&account=<?= $contacts_view['user_meta']['account'][0] ?>">
+                            <i data-feather="book"></i>Rentals Pipeline
+                        </a>
+                    </li>
+                <?php } ?>
                 <?php if ( current_user_can( 'administrator' ) && is_coopers_member(other_convert_displayid($contacts_view['user_meta']['displayid'][0])) ) { ?>
                     <li class="nav-item account-icon">
                         <a class="nav-link px-3 <?php if ($_GET['tab'] == 'contacts_permissions') { echo 'active'; } ?>" data-bs-toggle="tab" href="#contacts_permissions" role="tab">
@@ -167,6 +205,10 @@ if (!$contacts_view['user_meta']['displayid'][0]) {
 
     <div class="tab-content my-account-page section-block-p0 mb-4">
         <?php include 'layouts/includes/contacts/contacts_overview.php'; ?>
+        <?php include 'layouts/includes/contacts/contacts_locations.php'; ?>
+        <?php if (doif_coopereditoronly_query()) { ?>
+            <?php include 'layouts/includes/contacts/contacts_files.php'; ?>
+        <?php } ?>
         <?php if ( current_user_can( 'administrator' ) && is_coopers_member(other_convert_displayid($contacts_view['user_meta']['displayid'][0])) ) { ?>
             <?php include 'layouts/includes/contacts/contacts_permissions.php'; ?>
         <?php } ?>
@@ -174,6 +216,7 @@ if (!$contacts_view['user_meta']['displayid'][0]) {
     </div>
 
     <?php
+    
 }
 ?>
 
@@ -183,6 +226,7 @@ if (!$contacts_view['user_meta']['displayid'][0]) {
 
 // FOOTER
 include 'layouts/footer.php';
+
 
 ?>
 

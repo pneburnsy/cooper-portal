@@ -30,9 +30,6 @@ accounts_team_distinct(false);
 <div class="dashboard">
     <div class="row align-items-center table-header-block section-block mb-4">
         <div class="col-md-6">
-            <div>
-                <h5 class="card-title">All Contacts <span class="text-muted fw-normal ms-2">(<?= count($admin_all_users); ?>)</span></h5>
-            </div>
         </div>
         <div class="col-md-6">
             <div class="button-group-mobile d-flex flex-wrap align-items-center justify-content-end gap-2">
@@ -43,7 +40,9 @@ accounts_team_distinct(false);
     </div>
 </div>
 
-<?php user_table($admin_all_users, true); ?>
+<div class="contacts-only">
+    <?php user_table($admin_all_users, true); ?>
+</div>
 
 <?php /* ---------------- END - PAGE ---------------- */ ?>
 

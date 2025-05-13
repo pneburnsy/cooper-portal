@@ -26,6 +26,9 @@ function permission_edit($print) {
             'rental' => isset($_POST['permission_rental']) ? safestring($_POST['permission_rental']) : 'default',
             'examinations' => isset($_POST['permission_examinations']) ? safestring($_POST['permission_examinations']) : 'default',
             'service' => isset($_POST['permission_service']) ? safestring($_POST['permission_service']) : 'default',
+            'pipeline_1' => isset($_POST['permission_pipeline_1']) ? safestring($_POST['permission_pipeline_1']) : 'default',
+            'pipeline_2' => isset($_POST['permission_pipeline_2']) ? safestring($_POST['permission_pipeline_2']) : 'default',
+            'pipeline_3' => isset($_POST['permission_pipeline_3']) ? safestring($_POST['permission_pipeline_3']) : 'default',
         );
 
         foreach ($permissions as $type => $value) {

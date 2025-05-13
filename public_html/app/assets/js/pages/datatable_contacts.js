@@ -14,8 +14,8 @@ $(document).ready(function() {
         responsive: false,
         lengthChange: true,
         lengthMenu: [
-            [50, 75, 100, -1],
-            [50, 75, 100, 'All'],
+            [100],
+            [100],
         ],
         buttons: ['copy', 'excel', 'pdf', 'colvis'],
         stateSave: true,
@@ -34,5 +34,4 @@ $(document).ready(function() {
     table.buttons().container()
         .appendTo('#datatable-buttons_wrapper .col-md-6:eq(0)');
     $(".dataTables_length select").addClass('form-select form-select-sm');
-
 });

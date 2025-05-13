@@ -73,6 +73,9 @@
                                                 'rental' => 'Rental',
                                                 'examinations' => 'Thorough Examinations',
                                                 'service' => 'Service Planner',
+                                                'pipeline_1' => 'Specialised Pipeline',
+                                                'pipeline_2' => 'Solution Pipeline',
+                                                'pipeline_3' => 'Rental Pipeline',
                                             ];
                                             foreach ($permission_types as $type => $label) {
                                                 $value = 'default';

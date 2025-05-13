@@ -1,48 +1,4 @@
 <div id="overview" class="card dashboard tab-pane <?php if (!$_GET['tab']) { echo 'active'; } ?>" role="tabpanel">
-
-    <?php
-    $street = $contacts_view['user_meta']['address_street'][0] ?? '';
-    $city = $contacts_view['user_meta']['address_city'][0] ?? '';
-    $postcode = $contacts_view['user_meta']['address_postcode'][0] ?? '';
-    ?>
-
-    <?php if ($street || $city || $postcode) { ?>
-        <div class="row">
-            <div class="col-12 col-md-12 col-xl-12">
-                <div class="card-body note_block mb-4" style="background:#fff;border-radius:10px;">
-                    <h4 class="col-12 mb-4">Contact Location</h4>
-                    <div style="border-radius: 10px;overflow: hidden;border: 0;">
-                        <iframe src="https://maps.google.co.uk/maps?&q=<?php echo $postcode;?>&aq=&g=<?php echo $postcode;?>&ie=UTF8&hq=&hnear=<?php echo $postcode;?>&z=13&output=embed" width="100%" height="350" style="border-radius:10px;overflow:hidden;border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    </div>
-                    <?php
-                    $street = $contacts_view['user_meta']['address_street'][0] ?? '';
-                    $city = $contacts_view['user_meta']['address_city'][0] ?? '';
-                    $postcode = $contacts_view['user_meta']['address_postcode'][0] ?? '';
-
-                    $address_parts = array_filter([$street, $city, $postcode]);
-                    $full_address = implode(', ', $address_parts);
-
-                    $geo_data = unserialize($contacts_view['user_meta']['geo'][0] );
-
-                    $latitude = $geo_data['lat'];
-                    $longitude = $geo_data['lon'];
-
-                    ?>
-                    <div class="mt-2">
-                        <a class="d-inline-block float-start btn btn-primary " href="/app/page_view_users_travel.php">Plan a Journey</a>
-                        <?php
-                        if (!empty($full_address)) {
-                            $maps_url = "https://www.google.com/maps/search/$street,+$city,+$postcode/";
-                            echo "<div class='d-inline-block float-end mt-2 text-dark'><strong>Address: </strong> <a class='text-dark' href='{$maps_url}' target='_blank'>{$full_address} ($latitude $longitude)</a></div>";
-                        } else {
-                            echo '<div class="d-inline-block float-end mt-2 text-dark"><strong>Address: </strong> <span>No Address</span></div>';
-                        }
-                        ?>
-                    </div>
-                </div>
-            </div>
-        </div>
-    <?php } ?>
     <div class="row">
         <div class="col-12 col-md-8 col-xl-8">
             <div class="card-body note_block mb-4" style="background:#fff;border-radius:10px;">
@@ -67,18 +23,27 @@
                                 $note_class = 'normal';
                                 break;
                         } ?>
-                        <div class="note <?= $note_class ?>">
+                        <div class="note <?= $note_class ?> <?php if ( $notes_view[$i]->status == 1 ) { echo 'completed'; } ?>">
                             <span class="note_meta">
                                 <span class="note_type">
                                     <span class="note-notification <?= $note_class ?>">
                                         <i class="mdi <?= $note_icon ?> font-size-16 ml-2" style="margin-right: 4px;"></i> <?= $note_name ?>
                                     </span>
                                 </span>
-                                <form method="POST" class="note-delete-form">
-                                    <button type="submit" id="notes_delete" name="notes_delete" value="<?= $notes_view[$i]->uid ?>" class="mt-4 btn btn-label-secondary waves-effect waves-light">
-                                        <i class="mdi mdi-trash-can font-size-16"></i>
-                                    </button>
-                                </form>
+                                <div class="note-delete-form">
+                                    <?if ($notes_view[$i]->status != 1) { ?>
+                                        <form method="POST" class="d-inline-block">
+                                            <button type="submit" id="notes_complete" name="notes_complete" value="<?= $notes_view[$i]->uid ?>" class="mt-4 btn btn-label-secondary waves-effect waves-light">
+                                                <i class="mdi mdi-check font-size-16"></i>
+                                            </button>
+                                        </form>
+                                    <?php } ?>
+                                    <form method="POST" class="d-inline-block">
+                                        <button type="submit" id="notes_delete" name="notes_delete" value="<?= $notes_view[$i]->uid ?>" class="mt-4 btn btn-label-secondary waves-effect waves-light">
+                                            <i class="mdi mdi-trash-can font-size-16"></i>
+                                        </button>
+                                    </form>
+                                </div>
                             </span>
                             <span class="note_message">
                                 <?php if ($notes_view[$i]->type == 9) {
@@ -98,31 +63,35 @@
                                         case 5:
                                             $reminder_name = 'Email';
                                             break;
+                                        case 6:
+                                            $reminder_name = 'To Do';
+                                            break;
                                         default:
                                             $reminder_name = 'General Reminder';
                                             break;
                                     } ?>
                                     <span class="reminder-block <?= $note_class ?>">
+                                        <i class="mdi mdi-account font-size-16 ml-2" style="margin-right: 4px;"></i><strong>Person:</strong> <?= other_user_fullname($notes_view[$i]->userid); ?>
+                                    </span>
+                                    <span class="reminder-block <?= $note_class ?>">
                                         <i class="mdi mdi-calendar-search font-size-16 ml-2" style="margin-right: 4px;"></i><strong>Type:</strong> <?= $reminder_name ?>
                                     </span>
                                     <span class="reminder-block <?= $note_class ?>">
-                                        <i class="mdi mdi-calendar font-size-16 ml-2" style="margin-right: 4px;"></i><strong>Date:</strong> <?= formatted_renewal_date($notes_view[$i]->reminder_date) ?>
+                                        <i class="mdi mdi-calendar font-size-16 ml-2" style="margin-right: 4px;"></i><strong>Date:</strong> <?= formatted_renewal_date($notes_view[$i]->reminder_date) ?> (<?php if ($notes_view[$i]->reminder_time) { echo $notes_view[$i]->reminder_time; } else { echo 'All Day'; } ?>)
                                     </span>
-                                    <span class="reminder-block <?= $note_class ?>">
-                                        <i class="mdi mdi-clock-outline font-size-16 ml-2" style="margin-right: 4px;"></i><strong>Time:</strong> <?php if ($notes_view[$i]->reminder_time) { echo $notes_view[$i]->reminder_time; } else { echo 'All Day'; } ?>
-                                    </span>
-                                    <?php if (daysUntilDate($notes_view[$i]->reminder_date) > 0) { ?>
-                                        <span class="reminder-block <?= $note_class ?>">
-                                            <i class="mdi mdi-calendar-clock font-size-16 ml-2" style="margin-right: 4px;"></i><strong>Due In:</strong> <?= daysUntilDate($notes_view[$i]->reminder_date) ?> Days
-                                        </span>
-                                    <?php } ?>
+
+                                    <?php if ( $notes_view[$i]->status == 1 ) {
+                                        ?> <span class="reminder-block <?= $note_class ?>">
+                                            <i class="mdi mdi-check font-size-16 ml-2" style="margin-right: 4px;"></i><strong>Completed:</strong> <?= other_user_fullname($notes_view[$i]->status_userid) . ' (' .  formatted_renewal_date($notes_view[$i]->status_date) . ')' ?>
+                                        </span> <?php
+                                    } ?>
                                 <?php } ?>
                                 <?= $notes_view[$i]->note; ?>
                             </span>
                             <span class="note_posted text-dark">
                                 <?= timeAgo($notes_view[$i]->creation_date) ?>
-                                <a class="text-dark" style="padding-left: 2px;" href="/app/page_view_users_view.php?displayid=<?= other_user_displayid($notes_view[$i]->userid) ?>">
-                                    <span>(<?= formatted_date_time($notes_view[$i]->creation_date) ?>)</span>, <?= other_user_fullname($notes_view[$i]->userid); ?>
+                                <a class="text-dark" style="padding-left: 2px;" href="/app/page_view_users_view.php?displayid=<?= other_user_displayid($notes_view[$i]->creation_userid) ?>">
+                                    <span>(<?= formatted_date_time($notes_view[$i]->creation_date) ?>)</span>, <?= other_user_fullname($notes_view[$i]->creation_userid); ?>
                                 </a>
                             </span>
                         </div>
@@ -156,6 +125,15 @@
                     <label for="reminder_type" class="modal_label">Reminder Type *</label>
                     <select class="form-control modal_input" name="reminder_type" data-trigger>
                         <?php include 'dropdowns/notes_reminder_type.php'; ?>
+                    </select>
+
+                    <?php get_users_with_roles(); ?>
+                    <label for="reminder_userid" class="modal_label">Who is this reminder for? *</label>
+                    <select class="form-control modal_input" name="reminder_userid" data-trigger>
+                        <option value="<?= current_user_id() ?>">Myself: <?= current_user_fullname(); ?></option>
+                        <?php foreach($all_cooper_users as $user) {
+                            ?><option value="<?= $user->ID ?>"><?= $user->display_name ?></option>'<?php
+                        } ?>
                     </select>
 
                     <label for="reminder_date" class="modal_label">Reminder Time</label>

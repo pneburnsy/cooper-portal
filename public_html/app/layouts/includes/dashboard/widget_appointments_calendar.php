@@ -51,8 +51,8 @@
                                     $notes_users_data = get_users(['meta_key' => 'displayid', 'meta_value' => $note->displayid]);
                                     //print_r($notes_users_data);
                                     ?>
-                                    <a href="/app/page_view_users_view.php?displayid=<?= $note->displayid ?>" class="note <?= $note_class ?>">
-                                        <span class="note_message">
+                                    <a href="/app/page_view_users_view.php?displayid=<?= $note->displayid ?>" class="note <?= $note_class ?> <?php if ( $note->status == 1 ) { echo 'completed'; } ?>">
+                                        <span class="note_message" style="border-radius: 5px !important; overflow: hidden;">
                                             <?php if ($note->type == 9) {
                                                 switch ($note->reminder_type) {
                                                     case 1:

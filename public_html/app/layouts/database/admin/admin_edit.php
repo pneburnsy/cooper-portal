@@ -25,6 +25,7 @@ function admin_edit($print){
             'adminname' => safestring($_POST['adminname']),
             'adminemail' => safeemail($_POST['adminemail']),
             'portaladminemail' => safestring($_POST['portaladminemail']),
+            'portaladminemployee' => safestring($_POST['portaladminemployee']),
         );
         $where = array(
             'uid' => safeinteger(1),
@@ -37,7 +38,8 @@ function admin_edit($print){
             '%s',
             '%s',
             '%s',
-            '%s'
+            '%s',
+            '%s',
         );
         // ------ QUERY ------
         $admin_edit = $wpdb->update($table, $data, $where, $format);

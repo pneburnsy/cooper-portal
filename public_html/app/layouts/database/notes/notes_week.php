@@ -18,6 +18,7 @@ function notes_week($print) {
         $notes_week = $wpdb->get_results($wpdb->prepare("
                 SELECT * FROM `$table`
                 WHERE userid = %d
+                AND status IN (0, 1) 
                 AND reminder_date BETWEEN %s AND %s
             ", $current_user_id, $today, $one_week_later)
         );

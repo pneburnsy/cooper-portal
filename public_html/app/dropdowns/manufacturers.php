@@ -1,4 +1,6 @@
 <option value="SANY">SANY</option>
+<option value="SANY MH">SANY MH</option>
+<option value="SANY Trac">SANY Trac</option>
 <option value="Mantsinen">Mantsinen</option>
 <option value="Movella">Movella</option>
 <option value="Sve Truck">Sve Truck</option>
@@ -13,3 +15,5 @@
 <option value="STILL">STILL</option>
 <option value="MAFI">MAFI</option>
 <option value="Linde">Linde</option>
+<option value="Hyster">Hyster</option>
+<option value="Kalmar">Kalmar</option>

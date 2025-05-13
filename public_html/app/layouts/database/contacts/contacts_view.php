@@ -34,8 +34,9 @@ function contacts_view($print) {
         'user_registered' => $user_data->user_registered,
         'user_status' => $user_data->user_status,
         'display_name' => $user_data->display_name,
+        'geo' => $user_data->geo,
         'user_roles' => $user_roles,
-        'user_meta' => $user_meta
+        'user_meta' => $user_meta,
     );
 
     if ($print == true) {

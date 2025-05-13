@@ -20,7 +20,7 @@
                     </div>
 
                     <div class="form-12 mb-2">
-                        <label for="contacts_title" class="modal_label">Title</label>
+                        <label for="contacts_title" class="modal_label">Job Title</label>
                         <input name="contacts_title" type="text" class="modal_input" id="contacts_title" placeholder="Director" autocomplete="off">
                     </div>
 
@@ -44,18 +44,30 @@
                             <h6>Contact Address</h6>
                         </div>
                         <div class="form-12 mb-2">
-                            <label for="address_street" class="modal_label">Street</label>
-                            <input name="address_street" type="text" class="modal_input" maxlength="160" id="address_street">
+                            <label for="address_street" class="modal_label">Street Address 1</label>
+                            <input name="address_street" type="text" class="modal_input" maxlength="160" id="address_street" placeholder="Holly Farm Business Park">
+                        </div>
+
+                        <div class="form-12 mb-2">
+                            <label for="address_street_2" class="modal_label">Street Address 2</label>
+                            <input name="address_street_2" type="text" class="modal_input" maxlength="160" id="address_street_2" placeholder="Honiley Kenilworth">
                         </div>
 
                         <div class="form-6 mb-2">
                             <label for="address_city" class="modal_label">City</label>
-                            <input name="address_city" type="text" class="modal_input" maxlength="160" id="address_city">
+                            <input name="address_city" type="text" class="modal_input" maxlength="160" id="address_city" placeholder="Warwickshire">
                         </div>
 
                         <div class="form-6 lastchild mb-2">
                             <label for="address_postcode" class="modal_label">Postcode</label>
-                            <input name="address_postcode" type="text" class="modal_input" maxlength="20" id="address_postcode">
+                            <input name="address_postcode" type="text" class="modal_input" maxlength="20" id="address_postcode" placeholder="CV8 1NP">
+                        </div>
+
+                        <div class="form-12">
+                            <label for="address_country" class="modal_label">Country</label>
+                            <select name="address_country" class="form-control modal_input" data-trigger id="address_country">
+                                <?php include 'dropdowns/countries.php'?>
+                            </select>
                         </div>
                     </div>
 

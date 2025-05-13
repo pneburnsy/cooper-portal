@@ -772,3 +772,29 @@ function get_region_flag($region) {
     <div class="regionFlag" style="background-image: url(<?= $current_flag ?>)"></div>
     <?php
 }
+
+
+// RETURN ALL STAFF
+function get_users_with_roles() {
+    global $wpdb;
+
+    $query = $wpdb->prepare("
+            SELECT DISTINCT u.ID, u.user_login, u.user_email, u.display_name
+            FROM {$wpdb->users} u
+            INNER JOIN {$wpdb->usermeta} um ON u.ID = um.user_id
+            WHERE um.meta_key = %s
+            AND (
+                um.meta_value LIKE %s 
+                OR um.meta_value LIKE %s 
+                OR um.meta_value LIKE %s
+            )
+        ",
+        $wpdb->prefix . 'capabilities',
+        '%"administrator"%',
+        '%"employee_editor"%',
+        '%"employee"%'
+    );
+
+    global $all_cooper_users;
+    $all_cooper_users =  $wpdb->get_results($query);
+}

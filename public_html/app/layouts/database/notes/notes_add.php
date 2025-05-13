@@ -21,9 +21,12 @@ function notes_add($print){
             'p' => array(),
             'br' => array(),
         );
+        $location = isset($_POST['location']) ? safeinteger($_POST['location']) : 1;
+
         // ------ POST/GET (SANITIZE) ------
         $data = array(
             // Column => Value
+            'location' => safeinteger($location),
             'displayid' => safestring($displayid),
             'userid' => safeinteger(current_user_id()),
             'type' => safeinteger($_POST['note_type']),
@@ -31,6 +34,7 @@ function notes_add($print){
         );
         $format = array(
             // Format
+            '%d',
             '%s',
             '%d',
             '%d',
@@ -70,11 +74,15 @@ function notes_reminder_add($print){
             'p' => array(),
             'br' => array(),
         );
+        $location = isset($_POST['location']) ? safeinteger($_POST['location']) : 1;
+
         // ------ POST/GET (SANITIZE) ------
         $data = array(
             // Column => Value
+            'location' => safeinteger($location),
             'displayid' => safestring($displayid),
-            'userid' => safeinteger(current_user_id()),
+            'userid' => safeinteger($_POST['reminder_userid']),
+            'creation_userid' => safeinteger(current_user_id()),
             'type' => safeinteger(9), //DEFAULT FOR REMINDER
             'reminder_type' => safeinteger($_POST['reminder_type']),
             'reminder_time' => safestring($_POST['reminder_time']),
@@ -83,10 +91,12 @@ function notes_reminder_add($print){
         );
         $format = array(
             // Format
+            '%d',
             '%s',
             '%d',
             '%d',
             '%d',
+            '%s',
             '%s',
             '%s',
             '%s',

@@ -13,6 +13,7 @@
                 center: "title",
                 right: "dayGridMonth,timeGridWeek,timeGridDay",
             },
+            locale: "en",
             events: [
                 <?php
                 for ($x = 0; $x < count($holidaysfinal['holidays']); $x++) {
